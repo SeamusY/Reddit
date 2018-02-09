@@ -4,7 +4,7 @@ Reddit for New Computer Programmers (In small community).
 Detail plans:
 Rebuild a website Login System using Passport, Express, Redis.
 Create the landing page for the materials required to learn.
-Create a Sever to process the information, where they would lead to.
+Create a Sever to process the information, for comment sections and menu.
 Create Handle Bars that would render the entire page and the content in it.
 
 Packages Required:
@@ -14,3 +14,5 @@ Packages Required:
 -express
 -node.js
 -Bootstrap
+-postgres SQL
+-Knex
