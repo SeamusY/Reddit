@@ -1,45 +1,33 @@
-const express = require('express');
-const authRoutes = require('./routes/auth-routes');
-const profileRoutes = require('./routes/profile-routes');
-const passportSetup = require('./config/passport-setup');
-const mongoose = require('mongoose');
-const keys = require('./config/keys');
-const cookieSession = require('cookie-session'); 
-const passport = require('passport');
-
+const express = require("express");
 const app = express();
+const authRoutes = require('./routes/google-auth');
+const passport = require('passport');
+const passportSetup = require('./config/passport-setup')(passport);
+const session = require("./config/Init-session"); //Redis configuration
+const redisClient = require("./config/redis"); //Redis Local host and all the information with server
+const pathway = require("./routes/pathway");
+const Logincheck = require("./config/guard").Logincheck;
+//Redis client information
 
-//app.use(passport.initialize());
-//app.use(passport.session());
-
-
-// set view engine
-app.set('view engine', 'ejs');
-
-app.use(cookieSession({
-maxAge: 24*60*60*1000,
-keys:[keys.session.cookieKey]
-}));
+session(app, redisClient);
 
 //initalize passport
 app.use(passport.initialize());
 app.use(passport.session());
-
-
-// connect to mongodb
-mongoose.connect(keys.mongodb.dbURI, () => {
-    console.log('connected to mongodb');
-});
+app.use(express.static('views'))
 
 // set up routes 
-app.use('/auth', authRoutes);
-app.use('/profile', profileRoutes);
+app.get("/course", Logincheck, (req, res)=>{
+    res.sendFile(__dirname+"/coursepage.html");
+});
 
-// create home route
+//AuthRouter is equal to /google, so app.use('/auth/google');
+app.use('/auth', authRoutes); 
+
+// send home file on connect.
 app.get('/', (req, res) => {
-    res.render('home',{ user:req.user });
+    res.sendFile(__dirname+"/views/home.html");
 });
 
-app.listen(3000, () => {
-    console.log('app now listening for requests on port 8000');
-});
+
+app.listen(3000);
