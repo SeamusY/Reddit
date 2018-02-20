@@ -1,4 +1,4 @@
-const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
+const GoogleStrategy = require('passport-google-oauth2').Strategy;
 const env = require('dotenv');
 env.config();
 
@@ -11,14 +11,14 @@ module.exports = (passport) => {
     passReqToCallback: true
   }, (request, accessToken, refreshToken, profile, done) => {
     // User.findOrCreate({googleId:profile.id}, function (err, user){
-        return done(null, profile);
-      // })
-    }
+    console.log(profile);
+    return done(null, profile);
+    // })
+  }
   ));
   passport.serializeUser((id, done) => {
     done(null, id);
   });
-
   passport.deserializeUser((id, done) => {
     // User.findById(id).then((user) => {
     console.log("Passport Deserilized");

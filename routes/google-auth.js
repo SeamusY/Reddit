@@ -17,15 +17,16 @@ const passport = require('passport');
 
 // auth with google+
 router.get('/google', passport.authenticate('google', {
-    scope: [ 'https://www.googleapis.com/auth/plus.login',
-    , 'https://www.googleapis.com/auth/plus.profile.emails.read' ] }
+    scope: ['https://www.googleapis.com/auth/plus.login',
+        , 'https://www.googleapis.com/auth/plus.profile.emails.read']
+}
 ));
 
 router.get('/google/callback',
-    passport.authenticate( 'google', { 
-        successRedirect: '/course',
-        failureRedirect: '/auth/google/failure'
-}));
+    passport.authenticate('google', {
+        successRedirect: '/courses',
+        failureRedirect: '/auth/google/failed'
+    }));
 // callback route for google to redirect to
 // router.get('/google/redirect', passport.authenticate('google'),(req, res) => {
 //    // res.send(req.user);
