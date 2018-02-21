@@ -1,0 +1,143 @@
+<div class="post-content" id="content" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <h1 id="the-terminal">The terminal</h1>
+
+<p>As a person new to programming, using the terminal interface of a computer may be something you’ll do for the first time in this lesson. <br><br>
+We often access computer programs through their Graphical User Interface or GUI. This is simply the visual component of a computer program. For example, word processing programs, such as Microsoft Word, generally have a GUI that contains a white area for us to type in, a cursor to show where we are typing, and a variety of buttons, menus, and options to edit our work. This is a GUI. Another example is an email inbox that displays each email’s details, allows us to open an email by clicking on its subject line, and offers buttons to reply and format text. <br><br>
+However, when we are developing we will often use our devices’ terminal interface. The terminal is a text-based interface that allows a user to interact with the computer by entering commands on a command line. You have probably navigated through the folders and files on your device using a GUI tool such as Finder on a Mac or Explore on Windows. In this lesson, we’ll explore how we can create, update, delete and navigate our folders and files using the terminal interface. We’ll also see how using the terminal gives us access to other commands that we do not have when using the GUI tools our computers provide.<br></p>
+
+<h2 id="opening-the-terminal">Opening the terminal</h2>
+<p>On Mac/Linux open ‘terminal’.</p>
+
+<p>If you are using Windows 10 , you are required to use Bash on Ubuntu on Windows. The instructions for installing Bash on Ubuntu can be found on the following <a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide" target="_blank">link</a>. Unless you are using insider build, install the ubuntu image by the instruction of <code class="highlighter-rouge">Install using lxrun</code>.</p>
+
+<p>From this point onwards, we are only going to refer <strong><code class="highlighter-rouge">Bash on Ubuntu on Windows</code></strong> as <strong><code class="highlighter-rouge">Windows</code></strong>. We expect you to understand that all commands should be run in <code class="highlighter-rouge">bash</code> instead of normal <code class="highlighter-rouge">cmd</code> application.</p>
+
+<p>If you are using windows 8 or below, please install a Ubuntu Virtual Machine (VM) in Windows instead. Please find your instructor to help you.</p>
+
+<p>You will now see a new window to the inside of your computer. It might look a bit intimidating at the beginning, but it is a lot simpler to navigate then using the GUI once you get used to it.</p>
+
+<h3 id="lets-create-a-directory-folder">Let’s create a directory (folder)</h3>
+<p>When using a GUI, the term ‘folder’ is used to describe a storage space to organize files. On the command line, the term ‘directory’ is used instead. ‘Folder’ and ‘directory’ are essentially the same thing.</p>
+
+<p>You are currently in your home directory (the highest level of the directory). To double check, you can type <code class="highlighter-rouge">cd ~</code> and then press enter. You should now see a ‘~’ indicating that you are in your home directory.<br></p>
+
+<p>First, type <code class="highlighter-rouge">ls</code>. Does anything happen? Not really does it? This is because the command <code class="highlighter-rouge">ls</code> lists all the files in the current directory, however we haven’t added anything there yet.</p>
+
+<p>Next, type <code class="highlighter-rouge">mkdir code</code>. The <code class="highlighter-rouge">mkdir</code> command creates a new directory with the name ‘code’. If you now type <code class="highlighter-rouge">ls</code>, you should see a new ‘code’ directory.</p>
+
+<p>Afterwards type <code class="highlighter-rouge">cd code</code> . You should see ‘~’ being replaced with the name ‘code’. <code class="highlighter-rouge">cd</code> stands for ‘change directory’ which allows us to enter or change directories. <br></p>
+
+<h3 id="lets-add-a-file">Let’s add a file</h3>
+<p>Let’s do this:<br>
+Type <code class="highlighter-rouge">touch index.html</code>  and then type <code class="highlighter-rouge">ls</code> again. You should see a file with the name ‘index.html’. If you want you can use your GUI to navigate to your code folder and double check that the file really exists.</p>
+
+<h2 id="cheat-sheet">Cheat Sheet</h2>
+<p>These are some of the basic commands that will help you throughout this course.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>cd [path]</td>
+      <td>&nbsp;</td>
+      <td>Change directory</td>
+    </tr>
+    <tr>
+      <td>cd ~</td>
+      <td>&nbsp;</td>
+      <td>Home directory, e.g. ‘cd ~/folder/’</td>
+    </tr>
+    <tr>
+      <td>ls</td>
+      <td>&nbsp;</td>
+      <td>List Files in directory</td>
+    </tr>
+    <tr>
+      <td>ls -a</td>
+      <td>&nbsp;</td>
+      <td>Listing incl. hidden files</td>
+    </tr>
+    <tr>
+      <td>touch [file]</td>
+      <td>&nbsp;</td>
+      <td>Creates file</td>
+    </tr>
+    <tr>
+      <td>code [file]</td>
+      <td>&nbsp;</td>
+      <td>Opens the file in Visual Studio Code</td>
+    </tr>
+    <tr>
+      <td>code .</td>
+      <td>&nbsp;</td>
+      <td>Opens the whole directory in Visual Studio Code</td>
+    </tr>
+    <tr>
+      <td>cp [file] [dir]</td>
+      <td>&nbsp;</td>
+      <td>Copy a file to a directory</td>
+    </tr>
+    <tr>
+      <td>rm [file]</td>
+      <td>&nbsp;</td>
+      <td>Removes file, be careful with this command!!</td>
+    </tr>
+    <tr>
+      <td>rm -r [directory]</td>
+      <td>&nbsp;</td>
+      <td>Removes a whole directory with content. Again be extra careful here!!</td>
+    </tr>
+    <tr>
+      <td>sudo [command]</td>
+      <td>&nbsp;</td>
+      <td>Run command with the security privileges of the</td>
+    </tr>
+    <tr>
+      <td>exit</td>
+      <td>&nbsp;</td>
+      <td>Exit</td>
+    </tr>
+    <tr>
+      <td>clear</td>
+      <td>&nbsp;</td>
+      <td>Clear screen</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="special-for-windows">Special for Windows</h2>
+<p>On Windows, the drives are mounted in a special location <code class="highlighter-rouge">/mnt/</code>. For example , C Drive is mounted on <code class="highlighter-rouge">/mnt/c</code> and D drive is mounted on <code class="highlighter-rouge">/mnt/d</code>.
+You can access the your windows files in C Drive by using the following commands:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nb">cd</span>  /mnt/c
+    <span class="c"># Change Directory to C Drive</span>
+    <span class="nb">ls</span> <span class="nt">-al</span> 
+    <span class="c"># List all the files.</span>
+</code></pre></div></div>
+
+<p>If you don’t want to access your C-Drive every time by the path <code class="highlighter-rouge">/mnt/c</code>.
+You can run the following commands to create a symbolic link in your home directory.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nb">cd</span> ~
+    ln <span class="nt">-s</span> /mnt/c 
+    <span class="nb">cd</span> ~/c 
+    <span class="c"># Now in the path of /mnt/c</span>
+</code></pre></div></div>
+
+<p>From now on , if you are trying to install any command line based applications like <code class="highlighter-rouge">nodejs</code>, <code class="highlighter-rouge">git</code> or <code class="highlighter-rouge">ngrok</code>, you should always 
+use ubuntu to install the software.</p>
+
+<p>On the other hand, if you are installing graphical applications (such as <code class="highlighter-rouge">Visual Studio Code</code> or <code class="highlighter-rouge">Slack</code>), you should use windows to install the software.</p>
+
+<h3 id="where-do-i-place-my-code">Where do I place my code?</h3>
+<p>For windows, you are not supposed to use windows application to modify the files in ubuntu bash. Therefore , we strongly advise you to keep your code in a directory in the folder <code class="highlighter-rouge">/mnt/c/</code> such that you can access the files from both windows 
+application and ubuntu bash shell.</p>
+
+<p>You can read more in <a href="https://blogs.msdn.microsoft.com/commandline/2016/11/17/do-not-change-linux-files-using-windows-apps-and-tools/" target="_blank">here</a> why it is not advised to use windows application to modify the 
+files in ubuntu bash.</p>
+
+<h2 id="even-more-command-line">Even more command line</h2>
+<p>For more commands and everything in action, check out this video.</p>
+
+<iframe height="315" src="https://www.youtube.com/embed/jDINUSK7rXE" frameborder="0" allowfullscreen="allowfullscreen" class="youtube-player" style="max-width: 560px; width: 100%;"></iframe>
+
+</div>

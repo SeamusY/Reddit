@@ -36,7 +36,16 @@ app.use('/auth', authRoutes);
 
 //Content Rendering
 app.get("/content", (req, res) => {
-    res.render("anotheFile", {defaultLayout: 'main'});
-})
+    res.render("introduction-day1", {defaultLayout: 'main'});
+});
+app.get("/terminal", (req, res) => {
+    res.render("terminal-day1", {defaultLayout: 'main'});
+});
+app.get("/installation", (req, res) => {
+    res.render("installation-day1", {defaultLayout: 'main'});
+});
+app.get("/github", (req, res) => {
+    res.render("gitandgithub-day1", {defaultLayout: 'main'});
+});
 
 app.listen(3000);

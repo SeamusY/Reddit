@@ -1,0 +1,157 @@
+<div class="post-content" id="content" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <h1 id="installation">Installation</h1>
+
+<p>Before we can get started we need to install some more software, mainly Node.js and Visual Studio Code. We suggest using Visual Studio code because of the out-of-the-box experience. You can also use other editors if you want to.</p>
+
+<h2 id="what-is-nodejs">What is Node.js</h2>
+<p>Node.js is a very fast and lightweight JavaScript engine, which means it can run JavaScript code. It is mainly used to develop on servers, but can come in very handy when developing on your computer.</p>
+
+<h3 id="installing-nodejs">Installing Node.js</h3>
+<p>Go to <a href="https://nodejs.org/en/" target="_blank">Node</a> and download the latest stable version, install it and you are set. We’ll get back to that soon.</p>
+
+<p>For <code class="highlighter-rouge">Mac</code> User, you can just click on the button to install the latest version.</p>
+
+<p><img src="files/NodeJS_Installation.png" alt="NodeJS Installation"></p>
+
+<h4 id="non-mac-user">Non-Mac User</h4>
+<p>For Windows/Ubuntu users, before installing Node JS, you should upgrade your system with 
+the latest version of the packages.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">sudo </span>apt-get update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get <span class="nt">-y</span> upgrade
+</code></pre></div></div>
+
+<p>You can install Node by running the following two lines of code in your ubuntu shell:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># Run this line to add new nodejs to be available to install</span>
+curl <span class="nt">-sL</span> https://deb.nodesource.com/setup_8.x | <span class="nb">sudo</span> <span class="nt">-E</span> bash -
+
+<span class="c"># Run this line to installt nodejs.</span>
+<span class="nb">sudo </span>apt-get install <span class="nt">-y</span> nodejs
+</code></pre></div></div>
+
+<p>The above instructions can be found on this <strong><a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions" target="_blank">link</a></strong>. 
+Here is the page you should be looked for.</p>
+
+<p><img src="files/NodeJS_ubuntu.png" alt="NodeJS Installation"></p>
+
+<h3 id="installing-jasmine">Installing Jasmine</h3>
+<p>Because we are using exercism as the source of daily problem solving questions, you have to install <code class="highlighter-rouge">jasmine</code> to run the test cases provided by jasmine:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>npm install <span class="nt">-g</span> jasmine
+</code></pre></div></div>
+
+<h3 id="installing-exercism">Installing Exercism</h3>
+<p>As mentioned above, please install <a href="http://cli.exercism.io/" target="_blank">exercism cli</a>. We are going to do 1 javascript problem every day.</p>
+
+<p>We recommend using the following lines of code to install exercism.<br>
+For Mac OS X</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  curl <span class="nt">-O</span> https://raw.githubusercontent.com/exercism/cli-www/master/public/install
+  chmod +x install
+  <span class="nb">sudo</span> ./install
+</code></pre></div></div>
+
+<p>For Windows and linux</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  wget https://raw.githubusercontent.com/exercism/cli-www/master/public/install
+  chmod +x install
+  <span class="nb">sudo</span> ./install
+</code></pre></div></div>
+
+<p>The installation script will ask you for the installation location. You can just leave it
+in the default location <code class="highlighter-rouge">/usr/local/bin</code>.</p>
+
+<p>You can run the following command every morning on a weekday in course week(non-project week) to fetch the next javascript problem</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>exercism fetch javascript
+</code></pre></div></div>
+
+<p>After you have solved the problem and passed all the test cases, run the following <code class="highlighter-rouge">submit</code> command to submit your code.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>exercism submit hello-world.js
+</code></pre></div></div>
+
+<p>Let’s finish and submit the solution for the first toy-problem of javascript!</p>
+
+<h4 id="special-for-windows">Special for Windows</h4>
+<p>To configure the exercism to fetch the javascript problem to your C Drive automatically, you can 
+run the following command</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    exercism configure <span class="nt">--dir</span><span class="o">=</span><span class="s2">"/mnt/c/exercism"</span>
+</code></pre></div></div>
+
+<p>Please note that exercism submits neglect any symbolic link which means that if you 
+configure the exercism directory to be /mnt/c/exercism. You have to be in the exact same 
+path in order to submit the exercism problem</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nb">cd</span> ~/c/exercism/javascript/hello-world
+    <span class="c"># The symbolic link created in last section.</span>
+    exercism submit hello-world.js <span class="c"># This line will fail</span>
+
+    <span class="nb">cd</span> /mnt/c/exercism/javascript/hello-world
+    <span class="c"># The real physical path</span>
+    exercism submit hello-world.js <span class="c"># This line works</span>
+</code></pre></div></div>
+
+<h2 id="rocket-chat">Rocket Chat</h2>
+
+<p>Please download <a href="https://rocket.chat/" target="_blank">Rocket Chat</a> and keep in running so that you’ll receive our messages. We host our own rocket chat server at <a href="https://chat.acceleratedhk.com" target="_blank">https://chat.acceleratedhk.com</a>.</p>
+
+<h2 id="visual-studio-code">Visual Studio Code</h2>
+<p>In case you haven’t done so already, please go to <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> and download the editor. Visual Studio Code is a cool open source text editor that makes writing code a lot more fun. You can easily customise Code to make it unique to your taste. To help us get the most of Visual Studio Code and this bootcamp, let’s pimp up the software a bit.</p>
+
+<p>Check out this short video to get a flavour for what you can do with Visual Studio Code:</p>
+
+<iframe height="315" src="https://www.youtube.com/embed/4q1tD39Mk_A" frameborder="0" allowfullscreen="allowfullscreen" class="youtube-player" style="max-width: 560px; width: 100%;"></iframe>
+<youtube video="5wZVh7KQjzo"></youtube>
+
+<h3 id="opening-files-with-visual-studio-code">Opening files with Visual Studio Code</h3>
+
+<p>In your console navigate to your project folder, let’s use an example folder called demo.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/code/demo
+code <span class="nb">.</span>
+</code></pre></div></div>
+
+<h3 id="command-line">Command Line</h3>
+<p>You can also open the Integrated Terminal in Visual Studio code by <code class="highlighter-rouge">View -&gt; Integrated Terminal</code></p>
+
+<p>If you see a shell starting with PS, that means you are running Windows PowerShell instead of bash. You have run the command <code class="highlighter-rouge">bash</code> to go 
+back to bash as a result.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">PS</span> <span class="nx">C</span><span class="p">:</span><span class="err">\</span><span class="nx">Users</span><span class="err">\</span><span class="nx">kevin</span><span class="err">\</span><span class="nx">Dropbox</span><span class="err">\</span><span class="nx">git</span><span class="o">-</span><span class="nx">projects</span><span class="err">\</span><span class="nx">Project3</span><span class="o">-</span><span class="nx">Ampee3</span><span class="o">-</span><span class="nx">Production</span><span class="err">\</span><span class="nx">ampee3</span><span class="o">&gt;</span> <span class="nx">bash</span>
+</code></pre></div></div>
+
+<h3 id="third-party-extension">Third Party Extension</h3>
+<p>There are two third party extension I found good.</p>
+
+<ol>
+  <li><a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme" target="_blank">Material Icon Theme</a></li>
+  <li><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank">ESLint</a> (You have to run <code class="highlighter-rouge">sudo npm install -g eslint</code> in the command line before installing this extension)</li>
+  <li>
+    <p><a href="https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory" target="_blank">Git History extension</a></p>
+  </li>
+  <li><a href="https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime" target="_blank">Waka Time</a></li>
+</ol>
+
+<h2 id="git">Git</h2>
+<p>Git is the source versioning control software. We are going to use it to track our files.</p>
+
+<p>For Mac User, goes to the <a href="https://git-scm.com/download/mac" target="_blank">Git offical site</a> to download the latest version and install it.</p>
+
+<p>For Ubuntu/Windows users,</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get install git
+</code></pre></div></div>
+
+<h2 id="waka-time">Waka Time</h2>
+<p>We used Wakatime to help you stay productive on coding and to also understand more
+on your coding behavior. Please go to <a href="https://wakatime.com/dashboard" target="_blank">Waka Time Official website</a>. You should be able to login with Github directly. 
+You can then navigate to settings and copy the secret API key to visual studio code.
+When you reload Visual Studio Code , it should ask you for the secret API key. You 
+should copy the one to the box and hit enter.</p>
+
+<p><img src="files/waka_api_key.png" alt="Waka API key"></p>
+
+                </div>
