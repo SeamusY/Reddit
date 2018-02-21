@@ -19,6 +19,7 @@
             height: 100px;
             background-color: #ccc;
         }
+
         #left {
             float: left;
             width: 20%;
@@ -97,8 +98,13 @@
         .lefticons {
             float: right;
         }
-        #bar{
-            background: darkblue;
+
+        #bar {
+            background: #343a40;
+        }
+        li{
+             list-style-type: none;
+             display: block;
         }
     </style>
 </head>
@@ -107,7 +113,7 @@
     <nav class="navbar sticky-top" id="bar">
         <div class="lefticons">
             <a class="logo" href="/">
-                <img src="https://chat.acceleratedhk.com//assets/logo.png">
+                <img src="\images\logo.png">
             </a>
 
             <span id="menu" onclick="openNav()">&#9776;</span>
@@ -120,41 +126,165 @@
     </nav>
     <div class="container-fluid">
         <div class="row">
-                <div class="grid-row col-lg-9" id="left">
-                    <!--Making a side navigation Menu  -->
-                    <div id="mySidenav" class="sidenav">
-                          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                        <a href="#">About</a>
-                        <a href="#">Services</a>
-                        <a href="#">Clients</a>
-                        <a href="#">Contact</a>
-                    </div>
-                    <br/>
-                    <!--End of the side Navigation Menu -->
+            <div class="grid-row col-lg-9" id="left">
+                <!--Making a side navigation Menu  -->
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <ul>
+                        <li class="dropdown">
+                            <input type="checkbox" />
+                            <a href="#" data-toggle="dropdown">First Menu</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Services</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <input type="checkbox" />
+                            <a href="#" data-toggle="dropdown">Second Menu</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Services</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <input type="checkbox" />
+                            <a href="#" data-toggle="dropdown">Third Menu</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Services</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <input type="checkbox" />
+                            <a href="#" data-toggle="dropdown">Fourth Menu</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Services</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <input type="checkbox" />
+                            <a href="#" data-toggle="dropdown">Fifth Menu</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Services</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <input type="checkbox" />
+                            <a href="#" data-toggle="dropdown">Sixth Menu</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Services</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <input type="checkbox" />
+                            <a href="#" data-toggle="dropdown">Seventh Menu</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Services</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <br/>
+                <!--End of the side Navigation Menu -->
 
-            <!--    </div>
+                <!--    </div>
                 <div class="grid-row col-lg-6" id="middle">    -->
-                    <div id="content-section">
+                <div id="content-section">
                     <h1>Content section</h1>
                     {{{body}}}
-                    </div>
                 </div>
-                <div class="grid-row col-lg-3" id="right">
-                    <h1>Comments section</h1>
-                </div>
+            </div>
+            <div class="grid-row col-lg-3" id="right">
+                <h1>Comments section</h1>
+            </div>
 
         </div>
 
 
-</div>
-        <script>
-            function openNav() {
-                document.getElementById("mySidenav").style.width = "250px";
-            }
-            function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-            }
-        </script>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "220px";
+        }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 </body>
 
 </html>
