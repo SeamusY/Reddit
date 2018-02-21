@@ -1,0 +1,171 @@
+<div class="post-content" id="content" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <h1 id="git--github">Git &amp; GitHub</h1>
+
+<p>Git is a version control tool. It helps you keep track of the changes you and others do to your code. It is especially useful when several people collaborate on the same project. Git prevents people from accidentally overwriting each others code.</p>
+
+<iframe height="315" src="https://www.youtube.com/embed/uUuTYDg9XoI" frameborder="0" allowfullscreen="allowfullscreen" class="youtube-player" style="max-width: 560px; width: 100%;"></iframe>
+
+<p>Git can however also be very useful when keeping track of your own code even if you work on an independent. Imagine you accidentally break your code by deleting some lines. Instead of trying to figure out what you deleted you can go back in history with git and see previous versions of the code.</p>
+
+<h2 id="github">GitHub</h2>
+<p>If you haven’t done so already, go to <a href="https://github.com" target="_blank">GitHub</a> and create an account there. From now on you will use this account daily and it will be your reputation as a coder. So choose your username wisely.<br><br>
+GitHub is a platform we can upload our code to via git and share it with others. Everybody can go through your public repositories and look at your code. <br><br> It is also a requirement for you to upload every exercise that you complete here at Accelerate to GitHub, so that we can give you feedback.<br><br>
+Later on when you work on group projects, you’ll be using GitHub to collaborate.</p>
+
+<youtube video="w3jLJU7DT5E"></youtube>
+
+<h2 id="using-git">Using Git</h2>
+
+<p>We assume that you have already installed Git on your machine. Check if it is working by typing this in the terminal:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git <span class="nt">--version</span>
+git version 2.xx
+</code></pre></div></div>
+
+<p>Set up Git</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> user.name <span class="s2">"First Last"</span>
+git config <span class="nt">--global</span> user.email <span class="s2">"my@mail.com"</span>
+</code></pre></div></div>
+
+<p>It is important that your email is the same as the one you used for GitHub</p>
+
+<p>Now we need to connect your GitHub with your git. For that we require your SSH key. <br><br> SSH key is used to securely establish a connection through encryption. GitHub can verify that you are who you claim to be through looking at your SSH key. Using the SSH protocol, you can connect and authenticate to remote servers and services. With SSH keys, you can connect to GitHub without supplying your username or password at each visit. <br><br> This key consist out of two parts, the public and private key. You can share your public key, but the private key is only meant for you.</p>
+
+<p>Let’s check if you already have an SSH key generated, in your terminal type:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/.ssh
+<span class="nb">ls</span>
+</code></pre></div></div>
+
+<p>If you can see in the listed document a file called <code class="highlighter-rouge">id_rsa.pub</code> you already have a SSH key generated and the please SKIP the next step. This is extremely important otherwise you overwrite your current SSH key. If you do not see the file it means you don’t have a key. This is how we can generate one.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-C</span> my@mail.com
+</code></pre></div></div>
+
+<p>again use your GitHub email.</p>
+
+<p>If you are using Ubuntu , you can refer to this <a href="https://garywoodfine.com/use-pbcopy-on-ubuntu/" target="_blank">link</a> to setup the pbcopy 
+for your own machine. 
+Now lets copy the public key that is generated:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># For Mac</span>
+pbcopy &lt; ~/.ssh/id_rsa.pub
+
+<span class="c"># For Windows</span>
+<span class="nb">cat</span> ~/.ssh/id_rsa.pub | clip.exe
+
+<span class="c"># For ubuntu </span>
+<span class="nb">cat</span> ~/.ssh/id_rsa.pub
+<span class="c"># And then copy the output</span>
+</code></pre></div></div>
+
+<p>Copy the key and Go to GitHub settings &gt; SSH and GPG keys &gt; New SSH key and paste your public key that we just created.</p>
+
+<p>Afterwards create a new repository on GitHub call it <code class="highlighter-rouge">demo</code></p>
+
+<p>Go back to your terminal, let’s change into the code folder we created recently in the terminal demo. In there we create a demo folder with a file called README.md in there and then initialize git.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># On Mac OSX/ Linux</span>
+<span class="nb">cd</span> ~/code
+<span class="c"># On Windows Only </span>
+<span class="nb">cd</span> /mnt/c/
+
+<span class="c"># And then..</span>
+mkdir demo
+<span class="nb">cd </span>demo
+<span class="nb">echo</span> <span class="s2">"# demo"</span> <span class="o">&gt;&gt;</span> README.md
+git init
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">echo "# demo" &gt;&gt; README.md</code> is another way to create files, if you look at the README.md file in your editor you will notice it contains a <code class="highlighter-rouge"># demo</code> line. <br>
+<code class="highlighter-rouge">git init</code> initializes a new repository on your local machine.</p>
+
+<p>Let’s add our README.md file to git</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add README.md
+git commit <span class="nt">-m</span> <span class="s1">'first commit'</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">git add [file]</code> specifies which files you want to add to the repository. If you have several files it is easiest to add files by just typing <code class="highlighter-rouge">git add .</code> which adds all files in the folder to git. ‘Add’ will only start the tracking process, but not properly engrave it to git, for that we need one more step. <br>
+<code class="highlighter-rouge">git commit -m '[message]'</code> will permanently make a record of the file version, which you later refer to by finding the commit id. The message should be short but descriptive, so that others can understand what happened. ‘added code’ is not very helpful, where as ‘fixed recursion error’ is a lot more helpful when you keep adding on top of your code.</p>
+
+<p>However, everything we have done so far is local, so let’s connect it to GitHub. For that we need the SSH link GitHub provided you when setting up your repository. You should
+replace <code class="highlighter-rouge">gordonlau</code> with your own username.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin git@github.com:gordonlau/demo.git
+git push origin master
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">git remote add</code> sets up the connection to GitHub, we usually call this connection <code class="highlighter-rouge">origin</code> <br>
+<code class="highlighter-rouge">git push [connection name] [branch]</code> pushes your version to GitHub. Master refers to the branch name, something we will talk about at a later stage.</p>
+
+<p>Make sure to insert your GitHub username in the <code class="highlighter-rouge">git remote</code> command.</p>
+
+<h2 id="git-flow">Git Flow</h2>
+
+<p>Once your repository is set up those are the three commands you’ll need to use to upload a new version to GitHub. Remember them, you’ll need them all the time.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s1">'description'</span>
+git push origin master
+</code></pre></div></div>
+
+<h2 id="gitignore">.gitignore</h2>
+
+<p>There are certain files which you don’t want to upload to GitHub. For example you might have a file in which you store passwords. This would be a bad idea if someone got a hold of them - especially if they are publicly available on GitHub. You can put these files into a file called ‘.gitignore’. Create one in the root directory of you repository and add the relevant folders and files in there by name.<br><br></p>
+
+<p>If you are using a Mac you might also want to include the ‘.DS_Store’ file. It’s a file Mac uses to record your folder preferences, there is nothing secretive in there but it is also pretty annoying to have on your GitHub.</p>
+
+<h2 id="integration-with-visual-studio-code">Integration with Visual Studio Code</h2>
+<p>You can also use the third button on the left hand of the toolbar of Visual Studio Code which allows you to commit and push your files accordingly.</p>
+
+<h2 id="exercise">Exercise</h2>
+
+<p>If you haven’t done so during the prep course or as review try git on <a href="https://try.github.io/levels/1/challenges/1" target="_blank">GitHub</a></p>
+
+<p>GitHub <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank">cheatsheet</a></p>
+
+<h2 id="exercise-repository">Exercise Repository</h2>
+<p>You are going to use Git to hand in your exercise throughout Github. Your exercise repository 
+on github is <code class="highlighter-rouge">acceleratehk/&lt;Your_Github_Username&gt;</code>. 
+To clone the repository to your local laptop ,you can run the following command.
+Let’s say my username is <code class="highlighter-rouge">gordonlau</code>, for example.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:acceleratehk/gordonlau
+</code></pre></div></div>
+
+<p>This command clones the github repository to your local machine. After that , we recommend 
+you to put your exercise in that folder.
+After you make any changes , you can use <code class="highlighter-rouge">git add</code> and <code class="highlighter-rouge">git commit</code> to add and commit the files.
+When you have to hand in your exercises, you can just run <code class="highlighter-rouge">git push origin master</code> to push 
+your files to the respository.</p>
+
+<h3 id="folder-structure">Folder Structure</h3>
+<p>To help you organize your exercises 
+better, we recommend the folder structure to be as follows,</p>
+
+<p>Please put the files you want to submitted in the folder with the <strong>full name</strong> of the materials of that day.</p>
+
+<p>General structure:  / <strong>DAY</strong> /  <strong>TOPIC</strong> / <strong>QUESTION</strong></p>
+
+<p>For example , for the second day materials <code class="highlighter-rouge">02-html-css</code>
+The folder structure would be like</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>`02-html-css` / 
+`02-html-css` / `HTML`
+`02-html-css` / `HTML` / `A` / 
+`02-html-css` / `HTML` / `B` / 
+`02-html-css` / `HTML` / `C` / 
+`02-html-css` / `CSS`
+`02-html-css` / `CSS` / `A` / 
+`02-html-css` / `CSS` / `B` / 
+`02-html-css` / `CSS` / `C` / 
+`02-html-css` / `CSS` / `D` / 
+`02-html-css` / `CSS` / `E` / 
+`02-html-css` / `CSS` / `F` / 
+</code></pre></div></div>
+
+<p>With files for each part of exercise in their respective folder.</p>
+
+                </div>
