@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const authRoutes = require('./routes/google-auth');
+const contentRoutes = require('./routes/content')
 const passport = require('passport');
 const passportSetup = require('./config/passport-setup')(passport);
 const session = require("./config/Init-session"); //Redis configuration
@@ -33,8 +34,10 @@ app.get("/courses",Logincheck,(req, res) => { // Guard.js caused a redirection a
 });
 //AuthRouter is equal to /google, so app.use('/auth/google');
 app.use('/auth', authRoutes);
+app.use('/user',Logincheck, contentRoutes);
 
 //Content Rendering
+/*
 app.get("/content", (req, res) => {
     res.render("introduction-day1", {defaultLayout: 'main'});
 });
@@ -47,5 +50,40 @@ app.get("/installation", (req, res) => {
 app.get("/github", (req, res) => {
     res.render("gitandgithub-day1", {defaultLayout: 'main'});
 });
+app.get("/exercism", (req, res) => {
+    res.render("exercism", {defaultLayout: 'main'});
+});
+app.get("/html", (req, res) => {
+    res.render("html-day2", {defaultLayout: 'main'});
+});
+app.get("/css", (req, res) => {
+    res.render("css-day2", {defaultLayout: 'main'});
+});
+app.get("/js", (req, res) => {
+    res.render("js-day2", {defaultLayout: 'main'});
+});
+app.get("/functions", (req, res) => {
+    res.render("functions-day2", {defaultLayout: 'main'});
+});
+app.get("/loops", (req, res) => {
+    res.render("loops-day2", {defaultLayout: 'main'});
+});
+app.get("/bootstrap", (req, res) => {
+    res.render("bootstrap-day3", {defaultLayout: 'main'});
+});
+app.get("/grid", (req, res) => {
+    res.render("grid-day3", {defaultLayout: 'main'});
+});
+app.get("/widget", (req, res) => {
+    res.render("bootwidget-day4", {defaultLayout: 'main'});
+});website
+app.get("/website", (req, res) => {
+    res.render("website-day4", {defaultLayout: 'main'});
+});
+
+app.get("/revision5", (req, res) => {
+    res.render("revision-day5", {defaultLayout: 'main'});
+});
+*/
 
 app.listen(3000);

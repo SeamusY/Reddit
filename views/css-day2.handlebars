@@ -1,0 +1,285 @@
+<div class="post-content" id="content" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <h1 id="css">CSS</h1>
+
+<p>CSS stands for ‘Cascading Style Sheets’ which helps us design and structure a webpage. It is usually written in a separate file which is linked to the HTML document. It is a style sheet language used for describing the presentation of a document written in a markup language. Although most often used to set the visual style of web pages and user interfaces written in HTML and XHTML, CSS can be applied to any XML document.<br><br></p>
+
+<p>The separation of HTML from CSS makes it easier to maintain sites, share style sheets across pages, and tailor pages to different environments. <br></p>
+
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>After completing this section you should understand</p>
+<ul>
+  <li>how to give that website styling through CSS
+    <ul>
+      <li>the box model</li>
+      <li>flexbox</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="styling-with-css">Styling with CSS</h2>
+<p>Let’s do some quick changes to the code from our previous HTML example:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;title&gt;</span>My page<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"stylesheet.css"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;header&gt;</span>
+                <span class="nt">&lt;h1&gt;</span>Welcome to my page<span class="nt">&lt;/h1&gt;</span>
+            <span class="nt">&lt;/header&gt;</span>
+            <span class="nt">&lt;section&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h3&gt;</span>Navigate my page<span class="nt">&lt;/h3&gt;</span>
+                    <span class="nt">&lt;ul&gt;</span>
+                        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/index.html"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/about.html"</span> <span class="na">class=</span><span class="s">"link"</span><span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                    <span class="nt">&lt;/ul&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;h2&gt;</span>Text about me<span class="nt">&lt;/h2&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>Roof party fap synth meh bushwick. Stumptown cray farm-to-table celiac marfa, ugh chillwave DIY everyday carry. Seitan wolf taxidermy fanny pack, gastropub activated charcoal la croix bitters. Four dollar toast umami echo park post-ironic pop-up man braid. Try-hard normcore tofu, chartreuse next level mlkshk gluten-free chicharrones prism vegan glossier seitan health goth banjo.<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/section&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h3 id="what-have-we-just-changed">What have we just changed?<br></h3>
+<p>Notice the <code class="highlighter-rouge">&lt;link&gt;</code> tag below the <code class="highlighter-rouge">&lt;title&gt;</code> tag. This creates a connection between our HMTL file and a CSS file, which will include all our stylings.<br><br>
+We have also given some elements <code class="highlighter-rouge">id</code> or <code class="highlighter-rouge">class</code> information. This will come in handy when we try to identify an element to style it. You generally give an element an <code class="highlighter-rouge">id</code> if it only appears once in the HTML document, if it appears several times give it a <code class="highlighter-rouge">class</code>.<br><br></p>
+
+<p>Notice further how we replaced some of the <code class="highlighter-rouge">&lt;div&gt;</code> with other tags like <code class="highlighter-rouge">&lt;header&gt;</code> or <code class="highlighter-rouge">&lt;section&gt;</code>. That is just good HTML5 practice and not necessarily needed, we could have easily given those elements a class or id instead.</p>
+
+<h3 id="the-stylesheet">The stylesheet</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#9B9B9B</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#container</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">800px</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">header</span> <span class="p">{</span>
+    <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+    <span class="nl">padding-top</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">section</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#navigation</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">30%</span><span class="p">;</span>
+    <span class="nl">padding-left</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#content</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">60%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.link</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>If we link the stylesheet above with our HTML page we get the following result:</p>
+
+<p><img src="../files/CSS_Basic.png" alt="CSS Basic"></p>
+
+<p>As you can see we targeted different elements in a different way. If we targeted all elements of a type, we used the element name, like <code class="highlighter-rouge">body</code> or <code class="highlighter-rouge">section</code>. To target elements with an id we addressed them with a hashtag <code class="highlighter-rouge">#</code> like <code class="highlighter-rouge">#navigation</code> while elements with a class were targeted with a dot <code class="highlighter-rouge">.</code> like <code class="highlighter-rouge">.link</code>.</p>
+
+<p>There are many, many ways to style an element, most of them are self explanatory. Lets just look at a few things.</p>
+
+<h3 id="the-most-common-css-properties">The most common CSS properties</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>&nbsp;</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>color</td>
+      <td>&nbsp;</td>
+      <td>Sets the color of text</td>
+    </tr>
+    <tr>
+      <td>opacity</td>
+      <td>&nbsp;</td>
+      <td>Sets the opacity level for an element</td>
+    </tr>
+    <tr>
+      <td>background-color</td>
+      <td>&nbsp;</td>
+      <td>Specifies the background color of an element</td>
+    </tr>
+    <tr>
+      <td>background-image</td>
+      <td>&nbsp;</td>
+      <td>Specifies one or more background images for an element</td>
+    </tr>
+    <tr>
+      <td>border</td>
+      <td>&nbsp;</td>
+      <td>Sets border thickness, style, color in one declaration</td>
+    </tr>
+    <tr>
+      <td>border-radius</td>
+      <td>&nbsp;</td>
+      <td>A shorthand property for setting all the four border-*-radius properties</td>
+    </tr>
+    <tr>
+      <td>clear</td>
+      <td>&nbsp;</td>
+      <td>Specifies which sides of an element where other floating elements are not allowed</td>
+    </tr>
+    <tr>
+      <td>clip</td>
+      <td>&nbsp;</td>
+      <td>Clips an absolutely positioned element</td>
+    </tr>
+    <tr>
+      <td>display</td>
+      <td>&nbsp;</td>
+      <td>Specifies how a certain HTML element should be displayed</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td>&nbsp;</td>
+      <td>Specifies whether or not a box should float</td>
+    </tr>
+    <tr>
+      <td>height</td>
+      <td>&nbsp;</td>
+      <td>Sets the height of an element</td>
+    </tr>
+    <tr>
+      <td>margin</td>
+      <td>&nbsp;</td>
+      <td>Sets all the margin properties in one declaration</td>
+    </tr>
+    <tr>
+      <td>overflow-x</td>
+      <td>&nbsp;</td>
+      <td>Specifies whether or not to clip the left/right edges of the content, if it overflows the element’s content area</td>
+    </tr>
+    <tr>
+      <td>overflow-y</td>
+      <td>&nbsp;</td>
+      <td>Specifies whether or not to clip the top/bottom edges of the content, if it overflows the element’s content area</td>
+    </tr>
+    <tr>
+      <td>padding</td>
+      <td>&nbsp;</td>
+      <td>Sets all the padding properties in one declaration</td>
+    </tr>
+    <tr>
+      <td>position</td>
+      <td>&nbsp;</td>
+      <td>Specifies the type of positioning method used for an element (static, relative, absolute or fixed)</td>
+    </tr>
+    <tr>
+      <td>visibility</td>
+      <td>&nbsp;</td>
+      <td>Specifies whether or not an element is visible</td>
+    </tr>
+    <tr>
+      <td>width</td>
+      <td>&nbsp;</td>
+      <td>Sets the width of an element</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br>
+For the complete list check out the w3school documentation on <a href="https://www.w3schools.com/cssref/default.asp" target="_blank">CSS</a></p>
+
+<h3 id="box-model">Box Model</h3>
+<p><img src="../files/box-model.png" alt="The Box Model"></p>
+
+<p>Every element on the page is structured according to the same principle. They are always a rectangular box that can be tweaked to change the styling.</p>
+
+<p><code class="highlighter-rouge">width</code> and <code class="highlighter-rouge">height</code> set the width and height of the content box.
+<code class="highlighter-rouge">padding</code> is the inner margin of a CSS box. You can either style all four sides equally or set individual paddings through <code class="highlighter-rouge">padding-left</code>, <code class="highlighter-rouge">padding-bottom</code> etc. The padding clears an area around the content (inside the border) of an element. With CSS, you have full control over the padding. There are CSS properties for setting the padding for each side of an element (top, right, bottom, and left). <br>
+<code class="highlighter-rouge">border</code> sits between the padding and margin and can be styled individually. By default it has a width of 0px, but you can change the border thickness, style and color. The properties that can be set, are (in order): border-width, border-style, and border-color. It does not matter if one of the values above are missing, e.g. border:solid #ff0000; is allowed.<br>
+<code class="highlighter-rouge">margin</code> represents the outer area of the CSS box. Again all margin sides can be styled individually.</p>
+
+<p>To learn more about the box model check out this short video.</p>
+
+<iframe height="315" src="https://www.youtube.com/embed/d601NaSSqSE" frameborder="0" allowfullscreen="allowfullscreen" class="youtube-player" style="max-width: 560px; width: 100%;"></iframe>
+
+<h3 id="floating">Floating</h3>
+<p>Positioning is one of the most important aspects of CSS. You can use CSS to correctly position your elements on the page. One way to achieve this is through using float. Watch these two introduction video:</p>
+
+<youtube video="VwxGKpvW8Zk"></youtube>
+
+<youtube video="nE9lIRbIfI0"></youtube>
+
+<p>A handy summary of the code used in the videos can be found here <a href="https://css-tricks.com/all-about-floats/" target="_blank">CSS Tricks</a>.</p>
+
+<h4 id="exercise">Exercise</h4>
+
+<p><strong>D</strong> Using Float try to reproduce this image below. Create three divs with a width and height of 100px. Position them accordingly.</p>
+
+<p><img src="../files/float_exercise.png" alt="Floating Exercise"></p>
+
+<h3 id="flexbox">Flexbox</h3>
+<p>One of the coolest additions to the newest version of CSS is the Flexbox Layout. It allows us to easily move several elements inline and center them if we want. It is all a bit easier than using float. In the above example we aligned the navigation field and the content on one line with the command <code class="highlighter-rouge">display: flex</code>.
+The real power of flexbox only comes out when you start developing responsive (mobile friendly) websites as flexbox allows the elements to adjust to changes in the page size of the device it is on.</p>
+
+<p>To learn more about flexbox you can play a little game, see how many frogs you manage to move around. <a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy - A game for learning CSS flexbox</a></p>
+
+<p>There is also a handy guide <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">CSS Tricks</a>.</p>
+
+<h4 id="bonus-exercise">Bonus exercise</h4>
+
+<p><strong>E</strong> Try to reproduce the image from the floating exercise using flexbox.</p>
+
+<h2 id="viewport">Viewport</h2>
+
+<p>Once you want to make your website mobile ready, you will notice that many websites may look totally zoomed out and off. To fix that we can include the <a href="https://developer.mozilla.org/en/docs/Mozilla/Mobile/Viewport_meta_tag" target="_blank">viewport</a> inside the <code class="highlighter-rouge">&lt;head&gt;</code> tag of our html file.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>The code above sets the viewport width to the width of the screen, with a scale of 100%. That prevents a mobile phone browser from scaling down the website to fit on a screen.</p>
+
+<p>See the difference:</p>
+
+<p><img src="../files/viewport.png" alt="viewport"></p>
+
+<h2 id="additional-resources">Additional Resources</h2>
+<p>To solidify what we’ve just learnt in the HTML and CSS, watch Jake’s video as he takes you through the whole process of designing a simple webpage.</p>
+
+<youtube video="0afZj1G0BIE"></youtube>
+
+<p>If you still fee uncomfortable with CSS, Net Ninja has more videos about positioning with CSS.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL4cUxeGkcC9hudKGi5o5UiWuTAGbxiLTh" frameborder="0" allowfullscreen=""></iframe>
+
+<p>To learn more about HTML tags you can look at the guide from <a href="https://www.w3schools.com/html/default.asp" target="_blank">W3school</a></p>
+
+<p>To learn more about CSS properties you can look at the guide from <a href="https://www.w3schools.com/css/default.asp" target="_blank">W3school</a></p>
+
+<h2 id="exercise-1">Exercise</h2>
+<p><strong>F</strong> You just landed your first job as a front-end developer. Help a little flower shop code their landing page. Luckily they already hired a designer, so you only need to take care of the coding. You will find all the necessary images <a href="files/flowershop.zip">here</a>.</p>
+
+<p>Copy this design</p>
+
+<p><img src="../files/design.png" alt="Flower Shop"></p>
+
+<h2 id="bonus-exercise-1">Bonus Exercise</h2>
+<p>Make the flowershop website mobile ready. To make it truly mobile ready you will have to adjust the design, come up with a clever way to display the content. You will probably want to look at <a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp" target="_blank"><code class="highlighter-rouge">@media</code></a>.</p>
+
+                </div>

@@ -1,0 +1,245 @@
+<div class="post-content" id="content" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <h1 id="introduction-to-javascript">Introduction to JavaScript</h1>
+
+<p>Some may argue that JavaScript (JS) is one of the most important programming languages out there. It is certainly the language of the Internet. You need to use JS for anything dynamic in your web browser. Closing a popup by clicking a button? Logging into an app? Displaying content endlessly on your Facebook feed? All of this is achieved with the magic of JavaScript.</p>
+
+<h2 id="are-javascript-and-java-the-same">Are JavaScript and Java the same?</h2>
+<p>No, they are two completely different computer languages. Only their names are similar.<br></p>
+
+<h2 id="what-do-i-need-to-run-javascript">What do I need to run JavaScript?</h2>
+<p>JavaScript support is built right into all the major web browsers, including Internet Explorer, Firefox and Safari. Provided that the visitors to your site are using web browsers that support JavaScript (most do) and have JavaScript enabled (it is by default), then your JavaScript will run when they visit the page.<br></p>
+
+<h2 id="can-i-use-html-instead-of-javascript">Can I use HTML instead of JavaScript?</h2>
+<p>No. HTML and JavaScript are two completely different things. HTML is a markup language designed for defining static web page content. JavaScript is a programming language designed for performing dynamic tasks.<br> Sometimes the distinction is confusing because JavaScript code can go in the same file as HTML. <br></p>
+
+<h2 id="does-the-javascript-go-in-the-same-file-as-html">Does the JavaScript go in the same file as HTML?</h2>
+<p>It can, but your scripts will be more easily reused on multiple pages of your site if you place them in separate files. (Using a .JS extension helps identify them as Javascript.) You then just link the JavaScript to your HTML by inserting a <code class="highlighter-rouge">&lt;script&gt;</code> tag. The same JavaScript can then be added to several pages just by adding the appropriate tag into each of the pages to set up the link.<br></p>
+
+<p>If you are interested in the history of JavaScript, it’s intentions and where the language comes from, here is a guide to it’s <a href="https://auth0.com/blog/a-brief-history-of-javascript/" target="_blank">origin</a>.</p>
+
+<p>In the next section we will review some of the core fundamentals of JavaScript, before we really start playing around with writing code.</p>
+
+<h2 id="learning-objectives-for-this-session">Learning objectives for this session:</h2>
+<ul>
+  <li>Understand variables</li>
+  <li>Use logical operators</li>
+</ul>
+
+<h2 id="important-resources">Important resources</h2>
+
+<p>The JavaScript bible for every developer is the Mozilla Developer Network (MDN), the guys who originally invented JavaScript actually work there. It is extremely rich in detail but sometimes a bit hard to understand, at least for beginners. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN</a></p>
+
+<p>The W3school is equally rich in resources and sometimes a bit easier to understand. (W3school)[https://www.w3schools.com/js/default.asp]</p>
+
+<h2 id="ecmascript">ECMAScript</h2>
+
+<p>ECMAScript (ES) is a scripting language specification. A set of rules how a language should be scripted. JavaScript is an implementation of these rules. You will come across different standards of ECMAScript, the newest being ES6. This means that there are different versions of JavaScript out there, following these different standards. They are always backwards compatible, meaning that JavaScript following ES6 standards will work with JavaScript written in ES5 standards. However browsers using an old implementation of ES, like ES5 will not necessarily understand JavaScript written in ES6.</p>
+
+<p>Since there is still a large segment of browsers that can only understand ES5 we will rely on ES5 standards for the majority of this course. However we will introduce you to the newer ES6 standards when relevant.</p>
+
+<h2 id="running-javascript-code">Running JavaScript code</h2>
+
+<h3 id="browser-console">Browser Console</h3>
+<p>To test JavaScript code you can rely on your console in the browser. How to open the console in <a href="http://techdows.com/2014/09/how-to-run-javascript-commands-in-chrome-and-firefox-browsers.html" target="_blank">Chrome and Firefox</a>. Once you open the console you can just start by typing JavaScript code in there, or copying and paste it.</p>
+
+<p>More on the <a href="https://developers.google.com/web/tools/chrome-devtools/console/" target="_blank">Chrome</a> and <a href="https://developer.mozilla.org/en-US/docs/Tools/Web_Console" target="_blank">Firefox</a> console.</p>
+
+<p><img src="../files/console_demo.gif" alt="console demo"></p>
+
+<h3 id="replit">Repl.it</h3>
+<p>We can also use <a href="https://repl.it" target="_blank">repl.it</a> to test your javascript snippet.
+You can read and run the code side by side.</p>
+
+<h3 id="nodejs">NodeJS</h3>
+<p>While the console is handy to test out some JavaScript, it isn’t really useful when you are writing large functions. Also, as soon as you reload the page everything that was saved in the console will be gone. It is therefore a lot better to write larger JavaScript functions in your editor and run them with Node.js. All you need to do is type:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">node</span> <span class="nx">file</span><span class="p">.</span><span class="nx">js</span> <span class="c1">//file.js (being the file in which the JS code is saved)</span>
+</code></pre></div></div>
+
+<h2 id="commenting-in-javascript">Commenting in JavaScript</h2>
+
+<p>Comments are important to help you and other readers of your code to understand it. When writing code you may have some complex logic that is confusing, this is a perfect opportunity to include some comments in the code that will explain what is going on. Not only will this help you remember it later on, but if someone else views your code, they will also be able to understand the code (hopefully)!<br><br></p>
+
+<p>Another great thing about comments is the ability for comments to remove bits of code from execution when you are debugging your scripts. There are two types of comments in JavaScript: single line comments and multi-line comments.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// introduce a one line comment</span>
+
+<span class="cm">/*
+allows you to comment
+multiple lines
+*/</span>
+</code></pre></div></div>
+
+<h2 id="single-line-comments">Single Line Comments:</h2>
+<p>Single line comments start with //. Any text between // and the end of the line will be ignored by JavaScript (will not be executed).<br></p>
+
+<h2 id="multi-line-comments">Multi-line Comments</h2>
+<p>Multi-line comments start with <code class="highlighter-rouge">/*</code> and end with <code class="highlighter-rouge">*/</code>. Any text between <code class="highlighter-rouge">/*</code> and <code class="highlighter-rouge">*/</code> will be ignored by JavaScript.</p>
+
+<h2 id="variables">Variables</h2>
+
+<p>Variables are containers for storing data values.<br></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">z</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span> <span class="c1">// z = 8</span>
+</code></pre></div></div>
+
+<p>Variables can be updated:<br></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span> <span class="c1">// a is now 12 not 9</span>
+</code></pre></div></div>
+<p>You can place data into these containers and then refer to the data simply by naming the container.<br></p>
+
+<p>Before you use a variable in a JavaScript program, you must declare it. Variables are declared with the var keyword as follows.<br></p>
+
+<script type="text/javascript">
+   <!--
+      var money;
+      var name;
+   //-->
+</script>
+
+<p>You can also declare multiple variables with the same var keyword as follows −</p>
+
+<script type="text/javascript">
+   <!--
+      var money, name;
+   //-->
+</script>
+
+<p>Storing a value in a variable is called variable initialization. You can do variable initialization at the time of variable creation or at a later point in time when you need that variable.</p>
+
+<p>For instance, you might create a variable named money and assign the value 2000.50 to it later. For another variable, you can assign a value at the time of initialization as follows.<br></p>
+
+<script type="text/javascript">
+   <!--
+      var name = "Ali";
+      var money;
+      money = 2000.50;
+   //-->
+</script>
+
+<p>Note − Use the var keyword only for declaration or initialization, once for the life of any variable name in a document. You should not re-declare same variable twice.<br></p>
+
+<p>JavaScript is untyped language. This means that a JavaScript variable can hold a value of any data type. Unlike many other languages, you don’t have to tell JavaScript during variable declaration what type of value the variable will hold. The value type of a variable can change during the execution of a program and JavaScript takes care of it automatically.<br></p>
+
+<h2 id="naming-conventions">Naming Conventions</h2>
+
+<ul>
+  <li>When naming variables and functions, be as descriptive as possible so that another person reading your code can understand what the variable is used for. <code class="highlighter-rouge">abc</code> is not a good name for a variable, no one will understand what stands for. <code class="highlighter-rouge">firstName</code> is lot more descriptive.</li>
+  <li>We do this to enable code reviews to focus on more important issues than arguing over syntax and naming standards.</li>
+  <li>It can also provide meaningful data to be used in project handovers which require submission of program source code and all relevant documentation.</li>
+  <li>When naming your variables use camel case (<code class="highlighter-rouge">iAmCamelCaseBecauseEveryNewWordStartsWithACapitalLetter</code>) to combine several words.</li>
+  <li>By convention the first letter of a variable is always a lower case letter.</li>
+  <li>Variable names can contain letters, digits, underscore and dollar signs as well.</li>
+  <li>They can start with a letter, _ or $ but not with a number.</li>
+  <li>Names are case sensitive.</li>
+  <li>Certain reserved words cannot be used (JavaScript, document etc.)</li>
+</ul>
+
+<h2 id="data-types">Data Types</h2>
+
+<p>In JavaScript there are 7 different data types:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">undefined</code> - has no value assigned</li>
+  <li><code class="highlighter-rouge">null</code> - has exactly one value the value <code class="highlighter-rouge">null</code></li>
+  <li>Booleans - has a value of either <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code></li>
+  <li>number - any number e.g. 55, -99.87</li>
+  <li>string - any string e.g. “I’m a bit of text”</li>
+  <li>symbol - a new type, we don’t need to worry about right now</li>
+  <li>objects - a collection of properties, that are assembled with <code class="highlighter-rouge">{ }</code> brackets</li>
+</ul>
+
+<p>To determine what kind of value a data type is you can use the <code class="highlighter-rouge">typeof</code> operator</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typeof</span> <span class="mi">99</span> <span class="c1">// number</span>
+
+<span class="k">typeof</span> <span class="kc">true</span> <span class="c1">// boolean</span>
+
+<span class="k">typeof</span> <span class="p">{}</span> <span class="c1">// object</span>
+</code></pre></div></div>
+
+<p>Note that if you type:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typeof</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="c1">// object</span>
+</code></pre></div></div>
+
+<p>Arrays are also objects, to determine the type of an array:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">NaN</code> which stands for Not a Number is returned if you try to do mathematical calculations which don’t make sense. Like multiplying a string with a number. To determine if a variable is <code class="highlighter-rouge">NaN</code> you can use <code class="highlighter-rouge">isNaN(variable)</code></p>
+
+<h2 id="operators">Operators</h2>
+
+<h3 id="logical-operators">Logical Operators</h3>
+
+<p>Logical operators are used to determine the logic between variables or values.<br></p>
+
+<p>Given that <strong>x</strong> = 3, <strong>y</strong> = 6;</p>
+
+<p><code class="highlighter-rouge">!</code> (NOT) returns <code class="highlighter-rouge">true</code> for <code class="highlighter-rouge">false</code> values and <code class="highlighter-rouge">false</code> for <code class="highlighter-rouge">true</code> values;</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!</span><span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">&amp;&amp;</code> (AND) value on the right is only evaluated if the value on the left is <code class="highlighter-rouge">true</code></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nx">x</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="nx">y</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">||</code> (OR) value on the right is only evaluated if the value on the left is <code class="highlighter-rouge">false</code></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nx">x</span> <span class="o">==</span> <span class="mi">5</span> <span class="o">||</span> <span class="nx">y</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<h3 id="comparison-operators">Comparison Operators</h3>
+
+<p>Comparison operators are used in logical statements to determine equality or difference between variables or values.<br></p>
+
+<p><code class="highlighter-rouge">==</code> (equality) and <code class="highlighter-rouge">!=</code> (inequality) check if the items on either side match.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span> <span class="c1">//true</span>
+<span class="mi">1</span> <span class="o">==</span> <span class="s1">'1'</span> <span class="c1">// true</span>
+<span class="mi">1</span> <span class="o">==</span> <span class="kc">true</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">===</code> checks if they strictly match</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span> <span class="o">===</span> <span class="mi">1</span> <span class="c1">// true</span>
+<span class="mi">1</span> <span class="o">===</span> <span class="s1">'1'</span> <span class="c1">// false</span>
+<span class="mi">1</span> <span class="o">===</span> <span class="kc">true</span> <span class="c1">// false</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">&lt;</code> (less than) <code class="highlighter-rouge">&gt;</code> (greater than) <code class="highlighter-rouge">&lt;=</code> (less than or equal) <code class="highlighter-rouge">&gt;=</code> (greater than or equal)</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">4</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="c1">// true</span>
+<span class="mi">4</span> <span class="o">&lt;=</span> <span class="mi">5</span> <span class="c1">// true</span>
+
+<span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="c1">// false</span>
+<span class="mi">5</span> <span class="o">&gt;=</span> <span class="mi">5</span> <span class="c1">// true</span>
+</code></pre></div></div>
+
+<h3 id="conditional-operators">Conditional Operators</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">condition</span> <span class="p">?</span> <span class="nx">value1</span> <span class="p">:</span> <span class="nx">value2</span>
+</code></pre></div></div>
+
+<p>if the condition is <code class="highlighter-rouge">true</code> <code class="highlighter-rouge">value1</code> will be evaluated, if the condition is <code class="highlighter-rouge">false</code> <code class="highlighter-rouge">value2</code> will be evaluated.</p>
+
+<h2 id="exercise">Exercise</h2>
+
+<p><strong>G</strong> Given that <strong>x</strong> = 8 and <strong>y</strong> = 3. Answer the following:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">x</span> <span class="o">==</span> <span class="nx">y</span>
+<span class="nx">x</span> <span class="o">&amp;&amp;</span> <span class="nx">y</span> <span class="o">&lt;</span> <span class="mi">10</span>
+<span class="nx">x</span> <span class="o">||</span> <span class="nx">y</span> <span class="o">=&lt;</span> <span class="mi">8</span>
+<span class="nx">y</span> <span class="o">===</span> <span class="s1">'3'</span>
+<span class="o">!</span><span class="p">(</span><span class="nx">x</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+
+                </div>

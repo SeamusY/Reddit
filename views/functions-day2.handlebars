@@ -1,0 +1,151 @@
+<div class="post-content" id="content" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <h1 id="functions">Functions</h1>
+
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+  <li>Understand what functions are and what they are used for</li>
+  <li>Understand function scope</li>
+</ul>
+
+<p>Functions are blocks of code that are designed to perform a particular task. Functions are reusable, which allows us to reduce the amount of code we write. This greatly reduces complexity, increases legibility and makes it a lot easier to maintain / update our code.</p>
+
+<p>To use a function, you must define it somewhere in the scope from which you wish to call it.</p>
+
+<p>A function definition (also called a function declaration, or function statement) consists of the function keyword, followed by:</p>
+
+<ul>
+  <li>The name of the function.</li>
+  <li>A list of parameters to the function, enclosed in parentheses and separated by commas.</li>
+  <li>The JavaScript statements that define the function, enclosed in curly brackets, { }.</li>
+</ul>
+
+<p>There are several ways to declare a function</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">functionName</span> <span class="p">(</span><span class="nx">parameter1</span><span class="p">,</span> <span class="nx">parameter2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//something happens</span>
+<span class="p">}</span>
+
+<span class="c1">// Anonymous functions, functions without a name declaration</span>
+
+<span class="kd">var</span> <span class="nx">functionName</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">parameter1</span><span class="p">,</span> <span class="nx">parameter2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something</span>
+    <span class="c1">// another anonymous function</span>
+    <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// do something</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>For example, the following code defines a simple function named square:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">square</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">number</span> <span class="o">*</span> <span class="nx">number</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>To call a function just invoke it by it’s name and add parameters if needed.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">addUp</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="o">+</span> <span class="nx">c</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">addUp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span> <span class="c1">// 11</span>
+</code></pre></div></div>
+
+<h2 id="return">return</h2>
+
+<p>Notice the <code class="highlighter-rouge">return</code> command in the function above. As it’s name suggests it tells the function to give out a value. Without <code class="highlighter-rouge">return</code> the function never gives out the value of the multiplication</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">addUp</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">addUp</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span> <span class="c1">// undefined</span>
+</code></pre></div></div>
+
+<p>Adding a <code class="highlighter-rouge">return</code> statement ends the function as well. A function can only have one outcome and therefore only one <code class="highlighter-rouge">return</code> statement. Any code after a <code class="highlighter-rouge">return</code> statement will never run. However if you include conditions within a function, such as an <code class="highlighter-rouge">if</code> statement, the function can include several <code class="highlighter-rouge">return statements</code>.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">function</span> <span class="nx">isBiggerThanThree</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'I will never log to the console as the return statements above run before me'</span><span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="throw">throw</h2>
+
+<p>Sometimes we encounter an error when running our functions. For example imagine the function expects a number as input, but instead receives a string. In that case we don’t want to return anything but instead tell the code that the input was wrong. For this we can use the <code class="highlighter-rouge">throw</code> statement.</p>
+
+<p>Like <code class="highlighter-rouge">return</code> <code class="highlighter-rouge">throw</code> stops the function from continuing to run, but tells the JavaScript console that something went wrong here and this problem needs to be dealt with.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">function</span> <span class="nx">multiply</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">isNaN</span><span class="p">(</span><span class="nx">n</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">'Please enter a number'</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">n</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">multiply</span><span class="p">(</span><span class="s1">'bb'</span><span class="p">)</span> <span class="c1">// Error Please enter a number</span>
+</code></pre></div></div>
+
+<h2 id="scope">Scope</h2>
+
+<p>Scope defines where are variable can be accessed. In general we differentiate between <code class="highlighter-rouge">global</code> and <code class="highlighter-rouge">local</code> scope. Variables declared outside any functions are in the <code class="highlighter-rouge">global</code> scope, variables declared inside a function are in the <code class="highlighter-rouge">local</code> scope of that function. It is always possible to access <code class="highlighter-rouge">global</code> variables from a <code class="highlighter-rouge">local</code> scope but not the other way round.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">globalVariable</span> <span class="o">=</span> <span class="s2">"I'm so global"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">someFunction</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">localVariable</span> <span class="o">=</span> <span class="s2">"I'm so local"</span><span class="p">;</span>
+
+    <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">deeperNestedVariable</span> <span class="o">=</span> <span class="s2">"I'm nested in a function within a function"</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">localVariable</span><span class="p">);</span> <span class="c1">// "I'm so local"</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">globalVariable</span><span class="p">);</span> <span class="c1">// "I'm so global"</span>
+    <span class="p">}</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">globalVariable</span><span class="p">);</span> <span class="c1">// "I'm so global"</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">deeperNestedVariable</span><span class="p">);</span> <span class="c1">// Error</span>
+
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">localVariable</span><span class="p">);</span> <span class="c1">// Error</span>
+</code></pre></div></div>
+
+<p>For more on scope watch Net Ninja’s explanation</p>
+
+<iframe height="315" src="https://www.youtube.com/embed/kjdZ1h3CIs4" frameborder="0" allowfullscreen="allowfullscreen" class="youtube-player" style="max-width: 560px; width: 100%;"></iframe>
+
+<h2 id="callbacks">Callbacks</h2>
+
+<p>A callback function, also known as a higher-order function, is a function that is passed to another function (let’s call this other function “otherFunction”) as a parameter, and the callback function is called (or executed) inside the otherFunction. A callback function is essentially a pattern (an established solution to a common problem), and therefore, the use of a callback function is also known as a callback pattern.</p>
+
+<p>In the below example <code class="highlighter-rouge">setTimeout()</code> a JavaScript native function, calls the anonymous function after 1 second (1000 milliseconds);</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'JS rocks!'</span><span class="p">)</span>
+<span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="exercise">Exercise</h2>
+
+<p><strong>H</strong> Create a function called calculator( ). The function should take three arguments - operation(string), value1(number), value2(number). The function should return result of numbers after applying the chosen operation. <strong>This question involves the concept ofconditional. Read the section Conditional Before attempting this question.</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">calculator</span><span class="p">(</span><span class="s1">'+'</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="c1">// 14</span>
+<span class="nx">calculator</span><span class="p">(</span><span class="s1">'-'</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">// 4</span>
+<span class="nx">calculator</span><span class="p">(</span><span class="s1">'*'</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1">// 25</span>
+<span class="nx">calculator</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1">// 3</span>
+</code></pre></div></div>
+<h2 id="bonus-exercise">Bonus Exercise</h2>
+<p>The function below is not working properly, can you fix it?</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">area</span><span class="p">(</span><span class="nx">height</span> <span class="nx">width</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">height</span> <span class="o">*</span> <span class="nx">width</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+                </div>

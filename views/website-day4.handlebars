@@ -1,0 +1,125 @@
+<div class="post-content" id="content" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <h1 id="structuring-website">Structuring Website</h1>
+<p>You already learned how to use <code class="highlighter-rouge">HTML</code>,<code class="highlighter-rouge">CSS</code> and <code class="highlighter-rouge">Javascript</code>. You also learned how to use <code class="highlighter-rouge">Bootstrap</code>
+to build mobile responsive website. But given a blank page, you may find it difficult to visualise
+how to create the website from scratch. In this section , we are going to give you some insight on this thing.</p>
+
+<h2 id="learning-objective">Learning Objective</h2>
+<p>After this section , you should understand</p>
+<ul>
+  <li>how to apply what you learned to build your website properly.</li>
+  <li>how to decompose a website step-by-step</li>
+  <li>how to organize your website</li>
+</ul>
+
+<h2 id="the-outer-structure-of-a-website">The outer structure of a website</h2>
+<p>Normally a website could be decomposed into multiple parts. Here is one typical example:</p>
+
+<p><img src="../files/bootstrap_typical_layout.png" alt="Typical Structure"></p>
+
+<p>Then in this case, you should use the navbar of bootstrap for the navbar.
+Also each section should be a container on its own.</p>
+
+<p>Here is one possible example for this structure</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-expand-lg navbar-light bg-light"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"navbar-brand"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">"Brand"</span> <span class="na">src=</span><span class="s">"/your/brand/logo/url"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+  
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navbar-nav"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item active"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"jumbotron"</span><span class="nt">&gt;</span>
+   I am the banner
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
+   Section 1
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
+   Section 2
+<span class="nt">&lt;/div&gt;</span>
+...
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
+   Section n
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
+   Footer
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p><br></p>
+
+<h2 id="layout-within-a-section">Layout within a section</h2>
+<p>Within each section you probably want to add some column-based structures for presentation. <br> 
+You should always remember making a website is actually like playing with <strong>Russian Dolls</strong>. <br>
+One very important thing of creating a maintainable website is always try to contain the inner boxes inside the outer boxes, you can call it the Russian Doll Rule. Also, you should order and organize your web content in a human-readable manner. <br>
+Your code is running from top to the bottom, left to right. 
+One example could be like this.</p>
+
+<p><img src="files/div_structure.png" alt="Div Structure"></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"div-0"</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"div-1"</span> <span class="na">class=</span><span class="s">"col-sm-6"</span><span class="nt">&gt;</span>
+        Div 1
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"div-2-and-3"</span> <span class="na">class=</span><span class="s">"col-sm-6"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"div-2"</span><span class="nt">&gt;</span>
+            Div 2
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"div-3"</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"div-4"</span> <span class="na">class=</span><span class="s">"col-sm-5"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"div-6"</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"div-8"</span><span class="nt">&gt;</span>
+                        Div 8
+                    <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div&gt;</span>
+                    Div 4
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"div-7"</span><span class="nt">&gt;</span>
+                    Div 7
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-2"</span><span class="nt">&gt;</span>
+                Div 3
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"div-5"</span> <span class="na">class=</span><span class="s">"col-sm-5"</span><span class="nt">&gt;</span>
+                Div 5
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>As <code class="highlighter-rouge">div</code> is a block element by default, it is going to use the whole width without any further CSS.
+The rule of thumb of building layout is :</p>
+
+<ol>
+  <li>Use normal div if you want to make two element stacked together.</li>
+  <li>Use div with bootstrap grid system or flexbox if you want them to be side-by-side.</li>
+</ol>
+
+<p><br></p>
+
+<h2 id="use-flow-breaking-positioning-with-caution">Use flow-breaking positioning with caution</h2>
+<p>Only use absolute/relative/fixed positioning if you want to place your element in a position that does not obey the <code class="highlighter-rouge">Russian Doll Rule</code>. 
+Normally you may need to use absolute/fixed/relative element in <code class="highlighter-rouge">modal form</code> or <code class="highlighter-rouge">floating bubble</code>.</p>
+
+<p>Most likely, whenever you feel like you want to use absolute/fixed/relative positioning while you want 
+to respect the <code class="highlighter-rouge">Russian Dolls Rule</code>. It is time to add extra div to control the layout.</p>
+
+<p><br></p>
+
+<h2 id="exercise">Exercise</h2>
+<p><strong>B</strong>. Check your last exercise, does your solution obey the <code class="highlighter-rouge">Russian Doll Rule</code>?
+Fix it if it is not!!
+<img src="../files/only_bootstrap_page.png" alt="Only Bootstrap Page"></p>
+
+                </div>
