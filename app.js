@@ -7,7 +7,7 @@ const session = require("./config/Init-session"); //Redis configuration
 const redisClient = require("./config/redis"); //Redis Local host and all the information with server
 const Logincheck = require("./config/guard").Logincheck;
 const hb = require('express-handlebars');
-
+const content = require("./routes/content");
 //Setting Up handle bars
 
 app.engine('handlebars', hb({defaultLayout: 'main' }));
@@ -26,26 +26,13 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + "/Public/index.html");
 });
 
-
 // set up routes 
+app.use("/user", Logincheck, content); //Render contents
+
 app.get("/courses",Logincheck,(req, res) => { // Guard.js caused a redirection and constant loop.
     res.sendFile(__dirname + "/coursepage.html");
 });
 //AuthRouter is equal to /google, so app.use('/auth/google');
 app.use('/auth', authRoutes);
-
-//Content Rendering
-app.get("/content", (req, res) => {
-    res.render("introduction-day1", {defaultLayout: 'main'});
-});
-app.get("/terminal", (req, res) => {
-    res.render("terminal-day1", {defaultLayout: 'main'});
-});
-app.get("/installation", (req, res) => {
-    res.render("installation-day1", {defaultLayout: 'main'});
-});
-app.get("/github", (req, res) => {
-    res.render("gitandgithub-day1", {defaultLayout: 'main'});
-});
 
 app.listen(3000);

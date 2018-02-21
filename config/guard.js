@@ -3,5 +3,5 @@ module.exports.Logincheck =
         if (req.isAuthenticated()) {
             return next();
         }
-        res.redirect('/auth/google');
-    } 
+        res.redirect('/');
+    }

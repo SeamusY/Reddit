@@ -25,7 +25,7 @@ router.get('/google', passport.authenticate('google', {
 router.get('/google/callback',
     passport.authenticate('google', {
         successRedirect: '/courses',
-        failureRedirect: '/auth/google/failed'
+        failureRedirect: '/Public'
     }));
 // callback route for google to redirect to
 // router.get('/google/redirect', passport.authenticate('google'),(req, res) => {
