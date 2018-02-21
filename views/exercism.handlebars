@@ -1,0 +1,27 @@
+<div class="post-content" id="content" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <p>You can run the below command every morning on a weekday in  course week(non-project week) to fetch the next toy problem</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>exercism fetch javascript
+</code></pre></div></div>
+
+<p>After you have solved the problems and passed all the test, run the <code class="highlighter-rouge">submit</code> command to submit your code. In this case, the file is called <code class="highlighter-rouge">hello-world.js</code></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>exercism submit hello-world.js
+</code></pre></div></div>
+
+<p>Let’s finish and submit the solution for the first toy-problem of javascript!</p>
+
+<p>Please note that exercism submit neglect any symbolic link which means that if you 
+configure the exercism directory to be /mnt/c/exercism. You have to be in the exact same 
+path in order to submit the exercism problem</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nb">cd</span> ~/c/exercism/javascript/hello-world
+    <span class="c"># The symbolic link created in last section.</span>
+    exercism submit hello-world.js <span class="c"># This line will fail</span>
+
+    <span class="nb">cd</span> /mnt/c/exercism/javascript/hello-world
+    <span class="c"># The real physical path</span>
+    exercism submit hello-world.js <span class="c"># This line works</span>
+</code></pre></div></div>
+
+                </div>

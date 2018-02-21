@@ -1,0 +1,248 @@
+<div class="post-content" id="content" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <h1 id="introduction-to-bootstrap">Introduction to Bootstrap</h1>
+<p>There are <strong>3</strong> languages we must be familiar with when creating a websites: <code class="highlighter-rouge">HTML</code>, <code class="highlighter-rouge">CSS</code>, <code class="highlighter-rouge">JavsScript</code>.</p>
+
+<ul>
+  <li>
+    <p><strong>HTML</strong>: a markup language to structure the content of our website</p>
+  </li>
+  <li>
+    <p><strong>CSS</strong>: a style language to decorate our HTML content to look better</p>
+  </li>
+  <li>
+    <p><strong>JavaScript</strong>: a scripting language to help us add and handle complex operations in our content</p>
+  </li>
+</ul>
+
+<p>Bootstrap is a <strong>collection of reusable codes</strong> written in those languages, which gives us a good starting point for creating websites.</p>
+
+<p>Bootstrap also excels at making our websites <strong>responsive</strong> and it provides lots of builtin CSS class that reset and beautify the default style of many modern browsers as well.</p>
+
+<p><br></p>
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>After completing this section you should understand</p>
+
+<ul>
+  <li>
+    <p>Why are we using Bootstrap in designing mobile responsive website?</p>
+  </li>
+  <li>
+    <p>What are the different ways of installing a library like Bootstrap?</p>
+  </li>
+  <li>
+    <p>How can we install and apply Bootstrap to our website?</p>
+  </li>
+</ul>
+
+<p><br></p>
+<h2 id="why-bootstrap">Why Bootstrap?</h2>
+<iframe height="315" src="https://www.youtube.com/embed/314m7YBRFvQ" frameborder="0" allowfullscreen="allowfullscreen" class="youtube-player" style="max-width: 560px; width: 100%;"></iframe>
+<p>Bootstrap is free and it streamlines our development process by</p>
+
+<ul>
+  <li>Supporting mobile responsive design in its core.</li>
+  <li>Providing consistent style over different browsers and mobile devices.</li>
+  <li>Providing list of components and utilities to enrich our website.</li>
+</ul>
+
+<p>By using it, we can reduce the number of custom CSS we have to write.</p>
+
+<p><br></p>
+<h3 id="it-makes-responsive-websites">It Makes Responsive websites</h3>
+<p>Responsive website design is the approach of making web content to relayout according to the size of screen (from Low resolution to HD monitor) without sacrificing all user experiences (UX).</p>
+
+<p>Responsive frameworks, like <strong>Bootstrap</strong>, use a variety of techniques, such as grid systems and flexible images (more on these below).</p>
+
+<p><br></p>
+<h3 id="it-works-like-a-grid">It Works Like A Grid</h3>
+
+<p>The grid system in Bootstrap separates web content and elements in up to <strong>12 columns</strong>. <br>
+Designers and developers can lay out their content in any combination of these columns for various screen sizes.</p>
+
+<p>For example, on a large screen, there is 3 equal size columns place alongside one another.<br>
+If screen size decreases, Bootstrap’s predefined rules will make the columns start to appear one after the other. <br>
+Therefore, the web content is displayed in a readable manner without worrying about customzing it ourselves.</p>
+
+<p><img src="../files/bootstrap_grid_transform.png" alt="Bootstrap Grid Transform" class="img-lg-width"></p>
+
+<p><br></p>
+<h3 id="it-has-responsive-images">It Has Responsive Images</h3>
+
+<p>Bootstrap also includes code that allows images to be automatically resized when screen size changes, by simply adding the <code class="highlighter-rouge">.img-responsive</code> class to your images. The predefined CSS rules take care of the rest. It can even change the shape of your images automatically by adding another class to them, like <code class="highlighter-rouge">.img-circle</code> and <code class="highlighter-rouge">.img-rounded</code>.</p>
+
+<p><br></p>
+<h3 id="compatibility">Compatibility</h3>
+<p>Bootstrap is compatible with all modern browsers as well as Internet Explorer. Plugins like <strong>HTML5Shiv</strong> and <strong>Respond.js</strong> come as part of Bootstrap’s default template. These help in porting HTML5 elements into older non-HTML5 browsers.</p>
+
+<p><br></p>
+<h3 id="documentation">Documentation</h3>
+<p>Another advantage of Bootstrap is that it provides an impressive documentation, examples and demos.<br> In this way, we can save our time to build the website as we do not need to explore everything before knowing how to use it. <br> Everything is in the documentation!</p>
+
+<p><br></p>
+<h3 id="open-source">Open source</h3>
+<p>One of the main reasons of using Bootstrap is the fact that it’s an open source project, hosted on Github. <br> You don’t have to deal with purchasing and licensing issues and it gives you the freedom to change it how you want it.</p>
+
+<p><br></p>
+<h3 id="code-examples">Code Examples</h3>
+<p>Let’s have a glimpse of Bootstrap!</p>
+
+<p>Create a simple page with 1 input box and 1 button:</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;form&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">'text'</span> <span class="na">name=</span><span class="s">"firstName"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>
+                I am now a button.
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+<p>Result:</p>
+<form>
+    <ul>
+        <li>
+            <input type="text" name="firstName">
+        </li>
+        <li>
+            <div class="btn btn-primary">
+                I am now a button.
+            </div>
+        </li>
+    </ul>
+</form>
+<hr>
+
+<p><br>
+Next, create a list group to help us to represent sequential data in a organized manner.</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-group-item"</span><span class="nt">&gt;</span>
+        Item I
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-group-item"</span><span class="nt">&gt;</span>
+        Item II
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-group-item"</span><span class="nt">&gt;</span>
+        Item III
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-group-item"</span><span class="nt">&gt;</span>
+        Item IV
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"list-group-item"</span><span class="nt">&gt;</span>
+        Item V
+    <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</code></pre></div></div>
+<p>Result:</p>
+<ul class="list-group" style="max-width: 400px;">
+    <li class="list-group-item">
+        Item I
+    </li>
+    <li class="list-group-item">
+        Item II
+    </li>
+    <li class="list-group-item">
+        Item III
+    </li>
+    <li class="list-group-item">
+        Item IV
+    </li>
+    <li class="list-group-item">
+        Item V
+    </li>
+</ul>
+<hr>
+
+<p><br>
+Also, include the must-have component - Navigation Bar in our website.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-expand-lg navbar-light bg-light"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"navbar-brand"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">"Brand"</span> <span class="na">src=</span><span class="s">"/your/brand/logo/url"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+  
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"navbar-nav"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item active"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"nav-item"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"nav-link"</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Link<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre></div></div>
+<p>Result:</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img alt="Brand" src="../../favicon.ico" width="30px" height="30px">
+    </a>
+  
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+        </li>
+    </ul>
+</nav>
+
+<hr>
+
+<p>As you can see from the above examples, bootstrap provides lots of production-ready css classes for developer to utilize. <br>
+It greatly reduces the effort to create and maintain these css rules.</p>
+
+<p><br></p>
+<h2 id="installation">Installation</h2>
+<p>There are several ways to install Bootstrap and in this unit, we are going to introduce you the <code class="highlighter-rouge">CDN</code> and <code class="highlighter-rouge">Direct Download</code> approach.
+<br></p>
+<h3 id="cdn">CDN</h3>
+<p>The easiest way to try Bootstrap is to include it from CDN - <code class="highlighter-rouge">Content Delivery Network</code>. <br>
+CDN is a globally distributed network of proxy servers deployed in multiple data centers and it is decidated to deliver static content to the users in a high performant way.<br></p>
+
+<p>By adding the lines below to your html , you can install the latest version of Bootstrap without hassles.<br></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Latest compiled and minified CSS --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"</span> <span class="na">integrity=</span><span class="s">"sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Latest compiled and minified Bootstrap JavaScript --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- Latest compiled and minified Jquery --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.2.1.slim.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- Latest compiled and minified Popper: Use for pop up bubble --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+</code></pre></div></div>
+
+<p>This is also the way of installation that we are going to use before we introduce more on NPM.<br>
+<br></p>
+<h3 id="direct-download">Direct Download</h3>
+<p>Last but not least, you can always go to <a href="http://getbootstrap.com/getting-started/" target="_blank">Bootstrap website</a> and download the bootstrap library directly. This method is the most straightforward among all of the methods. One disadvantage of downloading directly is that you have to manage the version and dependency of this library manually afterwards.
+After you have downloaded it, just add the following lines(with the path substituted!) to your site:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"css/bootstrap.min.css"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/bootstrap.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p><br></p>
+<h2 id="additional-resources">Additional Resources</h2>
+<youtube video="gqOEoUR5RHg"></youtube>
+<ul>
+  <li><a href="http://adventurega.me/bootstrap/" target="_blank">Be Creative on Bootstrap</a></li>
+</ul>
+
+<p><br></p>
+<h2 id="exercise">Exercise</h2>
+<p><strong>A</strong>. Create a simple webpage</p>
+<ol>
+  <li>Create a HTML page (<code class="highlighter-rouge">.html</code>)</li>
+  <li>Install Bootstrap library through CDN.</li>
+  <li>Create the navigation bar, buttons and the list group.</li>
+</ol>
+
+                </div>

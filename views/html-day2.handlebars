@@ -1,0 +1,124 @@
+<div class="post-content" id="content" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <h1 id="html">HTML</h1>
+
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>After completing this section you should understand:</p>
+<ul>
+  <li>How to structure a basic HTML website
+    <ul>
+      <li>all important HTML elements such as <code class="highlighter-rouge">&lt;h1&gt;</code>, <code class="highlighter-rouge">&lt;p&gt;</code>, <code class="highlighter-rouge">&lt;ul&gt;</code> and <code class="highlighter-rouge">&lt;li&gt;</code>, <code class="highlighter-rouge">&lt;blockquote&gt;</code> and <code class="highlighter-rouge">&lt;div&gt;</code> to create websites.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="html-the-language">HTML the language</h2>
+
+<p>You have gained some knowledge about HTML already, but let’s review some of the fundamentals before we can start typing any code. If you have already forgotten what HMTL is all about, here is a good refresher:</p>
+
+<iframe height="315" src="https://www.youtube.com/embed/ofox_6_-gGo" frameborder="0" allowfullscreen="allowfullscreen" class="youtube-player" style="max-width: 560px; width: 100%;"></iframe>
+
+<h3 id="basic-structure-of-every-html-page">Basic structure of every HTML page</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;title&gt;&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        {we put the content here}
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>The structure you see above is the most basic structure of every modern HTML webpage. The <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code> tags tell the browser what language the file is written in. The <code class="highlighter-rouge">&lt;head&gt;</code> tag additional contains relevant information for the browser to help it display the webpage correctly. While the <code class="highlighter-rouge">&lt;body&gt;</code> tag contains the majority of our code, that where we put all the content we want to display. Since the <code class="highlighter-rouge">&lt;body&gt;</code> looks a bit empty, let’s fill it with some HTML code.</p>
+
+<h3 id="basic-html-commands">Basic HTML commands</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;div&gt;</span>
+                <span class="nt">&lt;h1&gt;</span>Welcome to my page<span class="nt">&lt;/h1&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div&gt;</span>
+                <span class="nt">&lt;div&gt;</span>
+                    <span class="nt">&lt;h3&gt;</span>Navigate my page<span class="nt">&lt;/h3&gt;</span>
+                    <span class="nt">&lt;ul&gt;</span>
+                        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/index.html"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/about.html"</span><span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                    <span class="nt">&lt;/ul&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div&gt;</span>
+                    <span class="nt">&lt;h2&gt;</span>Text about me<span class="nt">&lt;/h2&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>Roof party fap synth meh bushwick. Stumptown cray farm-to-table celiac marfa, ugh chillwave DIY everyday carry. Seitan wolf taxidermy fanny pack, gastropub activated charcoal la croix bitters. Four dollar toast umami echo park post-ironic pop-up man braid. Try-hard normcore tofu, chartreuse next level mlkshk gluten-free chicharrones prism vegan glossier seitan health goth banjo.<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<p>That code above turns into:</p>
+
+<p><img src="../files/HTML_Basic.png" alt="Basic HTML"></p>
+
+<p>Can you figure out which tag achieved what purpose?</p>
+
+<p><code class="highlighter-rouge">&lt;h&gt;</code> tags are heading tags, they help build a necessary structure to guide the visitors attention. In total, we have six heading levels to choose from—h1 to h6—to add structure to the web page. h1 is the highest heading level (and, by default, the largest in terms of font size) and h6 the lowest (and smallest).</p>
+
+<p><code class="highlighter-rouge">&lt;p&gt;</code> or paragraph tags on the other hand are used to give all the other text parts some structure. Paragraphs are usually represented in visual media as blocks of text that are separated from adjacent blocks by vertical blank space and/or first-line indentation. Paragraphs are block-level elements, which occupies the entire space of its parent element (container), thereby creating a “block.”</p>
+
+<p><code class="highlighter-rouge">&lt;ul&gt;</code> unordered list, help create structure through listing <code class="highlighter-rouge">&lt;li&gt;</code> list items. There is also the <code class="highlighter-rouge">&lt;ol&gt;</code> ordered list, which relies on numbers instead of bullet points.</p>
+
+<p><code class="highlighter-rouge">&lt;a&gt;</code> tags or anchor tags link to different pages. The ‘<a>’ tag defines a hyperlink, which is used to link from one page to another. The most important attribute of the ‘</a><a>’ element is the ‘href’ attribute, which indicates the link’s destination.</a></p>
+
+<p>By default, links will appear as follows in all browsers:</p>
+
+<ul>
+  <li>An unvisited link is underlined and blue. <br></li>
+  <li>A visited link is underlined and purple. <br></li>
+  <li>An active link is underlined and red. <br></li>
+</ul>
+
+<p>These can be internal, on the same website or external, a different webpage.</p>
+
+<p><code class="highlighter-rouge">&lt;div&gt;</code> tag or division tag helps us structure the page itself. The user usually doesn’t see the <code class="highlighter-rouge">&lt;div&gt;</code> tag but it helps us move different parts of the page around and give it styling in general. It is generally good practice
+to put every building block of the page into a <code class="highlighter-rouge">&lt;div&gt;</code> tag. So in the above example we wrapped the navigation in a <code class="highlighter-rouge">&lt;div&gt;</code> since those elements make up one building block of our page.</p>
+
+<p>One other very useful tag is the <code class="highlighter-rouge">&lt;img&gt;</code> tag, it allows us to add images to a webpage. It works a bit similar to the <code class="highlighter-rouge">&lt;a&gt;</code> tag, but instead of a <code class="highlighter-rouge">href</code> part we have a <code class="highlighter-rouge">src=“address of image”</code> part in the tag. The <code class="highlighter-rouge">&lt;img&gt;</code> tag has two required attributes: src and alt.</p>
+
+<p>Note: Images are not technically inserted into an HTML page, images are linked to HTML pages. The <code class="highlighter-rouge">&lt;img&gt;</code> tag creates a holding space for the referenced image.</p>
+
+<p>Tip: To link an image to another document, simply nest the <code class="highlighter-rouge">&lt;img&gt;</code> tag inside <code class="highlighter-rouge">&lt;a&gt;</code> tags.</p>
+
+<h3 id="exercise">Exercise</h3>
+<p><strong>A</strong> Can you add an image below the paragraph? Use the code below:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;div&gt;</span>
+                <span class="nt">&lt;h1&gt;</span>Welcome to my page<span class="nt">&lt;/h1&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;div&gt;</span>
+                <span class="nt">&lt;div&gt;</span>
+                    <span class="nt">&lt;h3&gt;</span>Navigate my page<span class="nt">&lt;/h3&gt;</span>
+                    <span class="nt">&lt;ul&gt;</span>
+                        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/index.html"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/about.html"</span><span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                    <span class="nt">&lt;/ul&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+                <span class="nt">&lt;div&gt;</span>
+                    <span class="nt">&lt;h2&gt;</span>Text about me<span class="nt">&lt;/h2&gt;</span>
+                    <span class="nt">&lt;p&gt;</span>Roof party fap synth meh bushwick. Stumptown cray farm-to-table celiac marfa, ugh chillwave DIY everyday carry. Seitan wolf taxidermy fanny pack, gastropub activated charcoal la croix bitters. Four dollar toast umami echo park post-ironic pop-up man braid. Try-hard normcore tofu, chartreuse next level mlkshk gluten-free chicharrones prism vegan glossier seitan health goth banjo.<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<p><strong>B</strong> Create a html page that lists every day of the week, like this:
+    1. Monday
+    2. Tuesday
+    3. Wednesday
+    …</p>
+
+<p><strong>C</strong> Create two html pages. Call one index.html and the other about.html. On the index.html page put an image that links to the about.html website. If the user clicks on the image he should end up on the about.html site. On the about.html site put an email address, link that up as well. If the user clicks on the email, your mail program on your laptop should open.</p>
+
+                </div>

@@ -1,0 +1,199 @@
+<div class="post-content" id="content" style="touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                  <h1 id="conditionals-and-loops">Conditionals and loops</h1>
+
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+  <li>Understand and apply conditionals</li>
+  <li>Understand and apply loops</li>
+</ul>
+
+<p>Conditional statements are used to perform different actions based on different conditions. <br></p>
+
+<h2 id="conditionals">Conditionals</h2>
+
+<h3 id="conditional-statements">Conditional Statements</h3>
+<p>Very often when you write code, you want to perform different actions for different decisions.<br></p>
+
+<p>You can use conditional statements in your code to do this.<br></p>
+
+<p>In JavaScript we have the following conditional statements:<br></p>
+
+<ul>
+  <li>Use <if> to specify a block of code to be executed, if a specified condition is true<br></if></li>
+  <li>Use <else> to specify a block of code to be executed, if the same condition is false<br></else></li>
+  <li>Use <else if=""> to specify a new condition to test, if the first condition is false<br></else></li>
+  <li>Use <switch> to specify many alternative blocks of code to be executed<br></switch></li>
+</ul>
+
+<p><code class="highlighter-rouge">if / else</code></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">doSomething</span><span class="p">();</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">different</span> <span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">doSomethingElse</span><span class="p">();</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">doSomethingElseAgain</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">if/else</code> statement runs until one condition is met, if none of the conditions are met the else statement runs.
+Here is the flow chart of a if-block</p>
+
+<p><img src="../files/if_flow.jpg" alt="If Flow"></p>
+
+<p><code class="highlighter-rouge">switch</code> statement</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">switch</span><span class="p">(</span><span class="nx">expression</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">case</span> <span class="nx">n</span><span class="p">:</span>
+    <span class="nx">code</span> <span class="nx">block</span>
+    <span class="k">break</span><span class="p">;</span>
+<span class="k">case</span> <span class="nx">n</span><span class="p">:</span>
+    <span class="nx">code</span> <span class="nx">block</span>
+    <span class="k">break</span><span class="p">;</span>
+<span class="nl">default</span><span class="p">:</span>
+    <span class="nx">code</span> <span class="nx">block</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The flow chart of a switch statement is as follow:</p>
+
+<p><img src="../files/switch_flow.jpg" alt="Switch Flow"></p>
+
+<h2 id="loops">Loops</h2>
+
+<p>Loops run as long as the condition is met. Make sure that the condition is met at some point, otherwise you have an endless loop which will cause your browser to crash.</p>
+
+<h3 id="different-kinds-of-loops">Different Kinds of Loops</h3>
+<p>JavaScript supports different kinds of loops:<br></p>
+
+<ul>
+  <li>for - loops through a block of code a number of times<br></li>
+  <li>for/in - loops through the properties of an object<br></li>
+  <li>while - loops through a block of code while a specified condition is true<br></li>
+  <li>do/while - also loops through a block of code while a specified condition is true<br></li>
+</ul>
+
+<p>Loops are handy, if you want to run the same code over and over again, each time with a different value.<br></p>
+
+<p>Often this is the case when working with arrays:<br></p>
+
+<p>Instead of writing:<br></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">text</span> <span class="o">+=</span> <span class="nx">cars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="nx">text</span> <span class="o">+=</span> <span class="nx">cars</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="nx">text</span> <span class="o">+=</span> <span class="nx">cars</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="nx">text</span> <span class="o">+=</span> <span class="nx">cars</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="nx">text</span> <span class="o">+=</span> <span class="nx">cars</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<span class="nx">text</span> <span class="o">+=</span> <span class="nx">cars</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>You can write while loop instead.</p>
+
+<h3 id="while-loop">While Loop</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">text</span> <span class="o">+=</span> <span class="nx">cars</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+    <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The flow chart of the while loop is as follow:</p>
+
+<p><img src="../files/while_flow.jpg" alt="While Flow"></p>
+
+<h3 id="do-while-loop">Do-While Loop</h3>
+<p>DO while do exactly the same as while loop except it is run at least once.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">do</span><span class="p">{</span>
+        <span class="nx">text</span> <span class="o">+=</span> <span class="nx">cars</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+        <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>The flow chart of the do while loop is as follow:</p>
+
+<p><img src="../files/do_while_flow.jpg" alt="do while flow"></p>
+
+<h3 id="for-loop">For Loop</h3>
+<p>The for loop is often the tool you will use when you want to create a loop.<br></p>
+
+<p>The for loop has the following syntax:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">doSomething</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The flow chart of for loop is as follow:</p>
+
+<p><img src="../files/for_flow.jpg" alt="for flow"></p>
+
+<p><code class="highlighter-rouge">for ... in</code> is used to iterate over the properties of an objects</p>
+
+<p>Example:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="na">c</span><span class="p">:</span> <span class="mi">3</span>
+<span class="p">};</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">p</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'The value of obj.'</span> <span class="o">+</span> <span class="nx">p</span> <span class="o">+</span> <span class="s1">' is '</span> <span class="o">+</span> <span class="nx">obj</span><span class="p">[</span><span class="nx">p</span><span class="p">]);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="exercise">Exercise</h2>
+
+<p><strong>I</strong> Write a loop that logs every number from 1 to 30.</p>
+
+<p>If the number is divisible through 3 it should log Hong instead. <br>
+If the number is divisible by 5 it should log Kong instead. <br>
+If the number is divisible by 3 and 5 it should log Hong Kong.</p>
+
+<p>So the output should look something like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+2
+Hong
+4
+Kong
+Hong
+7
+8
+Hong
+Kong
+11
+Hong
+13
+14
+Hong Kong
+</code></pre></div></div>
+<p><strong>J</strong> Write a function that expects a number as a parameter. If the value that is entered is less than 0, equal to 0, or not a number, the function should return the string ‘ERROR’. If the number that is entered is greater than or equal to 1000000 it should simply return the number. Otherwise it should multiply the number by 10 however many times it takes to get a number that is greater than or equal to 1000000 and return that.</p>
+
+<h2 id="bonus-exercise">Bonus Exercise</h2>
+<p><strong>K</strong>Maya writes weekly articles to a well known magazine, but she is missing one word each time she is about to send the article to the editor. The article is not complete without this word. Maya has a friend, Dan, and he is very good with words, but he doesn’t like to just give them away. He texts Maya a number and she needs to find out the hidden word. The words can contain only the letter: “a”, “b”, “d”, “e”, “i”, “l”, “m”, “n”, “o”, and “t”.</p>
+
+<p>Luckily, Maya has the key:</p>
+
+<p>“a” - 6 “b” - 1 “d” - 7 “e” - 4 “i” - 3 “l” - 2 “m” - 9 “n” - 8 “o” - 0 “t” - 5</p>
+
+<p>You can help Maya by writing a function that will take a number between 100 and 999999 and return a string with the word.</p>
+
+<p>The input is always a number, contains only the numbers in the key. The output should be always a string with one word, all lowercase.</p>
+
+<p>Maya won’t forget to thank you at the end of her article :)</p>
+
+<p><strong>L</strong> Write a function that takes two inputs: a string and a character. The function will count the number of times that character appears in the string. The count is case insensitive.</p>
+
+<p>For example:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">countChar</span><span class="p">(</span><span class="s2">"fizzbuzz"</span><span class="p">,</span><span class="s2">"z"</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="mi">4</span>
+<span class="nx">countChar</span><span class="p">(</span><span class="s2">"Fancy fifth fly aloof"</span><span class="p">,</span><span class="s2">"f"</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="mi">5</span>
+</code></pre></div></div>
+
+<p>The character can be any alphanumeric character.</p>
+
+                </div>

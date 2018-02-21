@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const authRoutes = require('./routes/google-auth');
+const contentRoutes = require('./routes/content')
 const passport = require('passport');
 const passportSetup = require('./config/passport-setup')(passport);
 const session = require("./config/Init-session"); //Redis configuration
