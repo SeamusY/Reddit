@@ -11,7 +11,6 @@ module.exports = (passport) => {
     passReqToCallback: true
   }, (request, accessToken, refreshToken, profile, done) => {
     // User.findOrCreate({googleId:profile.id}, function (err, user){
-    console.log(profile);
     return done(null, profile);
     // })
   }
@@ -21,7 +20,6 @@ module.exports = (passport) => {
   });
   passport.deserializeUser((id, done) => {
     // User.findById(id).then((user) => {
-    console.log("Passport Deserilized");
     done(null, id);
     // });
   });

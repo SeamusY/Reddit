@@ -9,6 +9,8 @@ const redisClient = require("./config/redis"); //Redis Local host and all the in
 const Logincheck = require("./config/guard").Logincheck;
 const hb = require('express-handlebars');
 const content = require("./routes/content");
+const knex = require("./config/knex");
+const userinfo = require("./config/postgres");
 //Setting Up handle bars
 
 app.engine('handlebars', hb({defaultLayout: 'main' }));
@@ -28,9 +30,10 @@ app.get('/', (req, res) => {
 });
 
 // set up routes 
-app.use("/user", Logincheck, content); //Render contents
+app.use(" /user", Logincheck, content); //Render contents
 
 app.get("/courses",Logincheck,(req, res) => { // Guard.js caused a redirection and constant loop.
+    new userinfo(req.session.passport.user);
     res.sendFile(__dirname + "/coursepage.html");
 });
 //AuthRouter is equal to /google, so app.use('/auth/google');
