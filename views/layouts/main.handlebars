@@ -6,150 +6,8 @@
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-        crossorigin="anonymous"></script>
     <link href="https://bootswatch.com/4/superhero/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <style>
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-weight: 400;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        blockquote,
-        pre,
-        ul,
-        ol,
-        dl,
-        figure,
-        .highlight {
-            margin-bottom: 15px;
-        }
-
-        h1,
-        h2 {
-            padding-top: 20px;
-        }
-
-        body {
-            color: #111;
-            font-feature-settings: "kern" 1;
-            font-kerning: normal;
-        }
-
-        p {
-            color: rgb(17, 17, 17);
-        }
-
-        header {
-            width: 100%;
-            height: 100px;
-            background-color: #ccc;
-        }
-
-        #left {
-            float: left;
-            width: 20%;
-            min-height: 700px;
-            background-color: #fff;
-        }
-
-        #right {
-            float: right;
-            width: 20%;
-            min-height: 700px;
-            background-color: rgb(173, 157, 65);
-        }
-
-        p {
-            color: rgb(17, 17, 17);
-            font-size: 16.5px;
-        }
-
-        #container {}
-
-        #box {
-            width: 350px;
-            height: 150px;
-            background-color: aquamarine;
-        }
-
-        .logo>img {
-            width: 70px;
-            float: left;
-        }
-
-        .sidenav {
-            height: 100%;
-            width: 0px;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            background-color: skyblue;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
-
-        .sidenav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #000;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidenav a:hover {
-            color: #F1F1F1;
-        }
-
-        .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        #content-section {
-            margin-left: 20%;
-        }
-
-        #menu {
-            font-size: 50px;
-            cursor: pointer;
-            color: white;
-            float: left;
-        }
-
-        .lefticons {
-            float: right;
-        }
-
-        #bar {
-            background: #343a40;
-        }
-
-        li {
-            list-style-type: none;
-            display: block;
-        }
-    </style>
+    <link href="/mains.css" rel="stylesheet" type='text/css'>
 </head>
 
 <body>
@@ -165,11 +23,12 @@
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <span style="font-size:30px;cursor:pointer" onclick="openCom()">QA</span>
         </form>
     </nav>
-    <div class="container-fluid">
+    <div class="container-fluid" id="body">
         <div class="row">
-            <div class="grid-row col-lg-9" id="left">
+            <div class="grid-row col-lg-12" id="left">
                 <!--Making a side navigation Menu  -->
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -251,26 +110,41 @@
                 <br/>
                 <!--End of the side Navigation Menu -->
 
-                <!--    </div>
+                {{!--
+                <div class="grid-row col-lg-3" id="right">
+                    <div class="commentfromuser">
+                        <input type="text" id="commentsection">
+                        <input type="submit" value="submit" id="submit">
+                    </div>
+                    <div id="storedcomments">
+                    </div> --}}
+                    <!--    </div>
                 <div class="grid-row col-lg-6" id="middle">    -->
-                <div id="content-section">
-                    <h1>Content section</h1>
-                    {{{body}}}
+                    <div id="content-section">
+                        <h1>Content section</h1>
+                        {{{body}}}
+                    </div>
+                    <div id="comments" class="commentnav" id="right">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeCom()">&times;</a>
+                        <div class="commentfromuser">
+                            <h3>Leave a comment or give a guide</h3>
+                            <input type="textarea" id="commentsection" name="description">
+                            <input type="submit" value="submit" id="submit">
+                        </div>
+                        <div id="storedcomments">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="grid-row col-lg-3" id="right">
-                <h1>Comments section</h1>
-            </div>
         </div>
-    </div>
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "220px";
-        }
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-    </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+            crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+        <script src="/mains.js"></script>
 </body>
 
 </html>
