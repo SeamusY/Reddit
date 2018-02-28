@@ -11,17 +11,11 @@ function closeCom() {
     document.getElementById("comments").style.width = "0";
 }
 
-$("#submit").click(function() {
-    event.preventDefault();
+$("#submit").click(function(e) {
+    e.preventDefault();
     $.post(window.location.pathname /*/users/introduction*/, $("#commentsection").serialize(), function(data){
-        console.log(data);
         console.log("POST SENT");
-    });
+    }).done(function(){
+        $("#commentsection").val("")
+    })
 });
-//   $.ajax({
-//     type: "GET",
-//     url: window.location.href,
-//     data: data,
-//     success: success,
-//     dataType: dataType
-//   });
