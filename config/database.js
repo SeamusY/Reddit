@@ -60,7 +60,7 @@ function render(thread) {
     .limit(5)
     .then(tables=>{
         return tables.map(items=> {return {comment: items.comment,
-                                           email: items.email,
+                                           email: items.name||items.email,
                                            name: items.name}
                                   });
     });  
