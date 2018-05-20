@@ -7,7 +7,7 @@ module.exports = (passport) => {
     // options for google strategy
     clientID: process.env.clientID,
     clientSecret: process.env.clientSecret,
-    callbackURL: 'http://localhost:3000/auth/google/callback',
+    callbackURL: 'http://www.YoSeaAsia.com/auth/google/callback',
     passReqToCallback: true
   }, (request, accessToken, refreshToken, profile, done) => {
     // User.findOrCreate({googleId:profile.id}, function (err, user){

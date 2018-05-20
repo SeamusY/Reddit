@@ -62,6 +62,7 @@ input{
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    display: none;
 }
 .sidenav a {
     padding: 8px 8px 8px 32px;
